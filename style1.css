@@ -1,0 +1,43 @@
+h1{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+h2{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+h3{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+h4{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+h5{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+h6{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+p{
+    font-family: Helvetica;
+    font-size: "100%";
+}
+a:link{
+    color:blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a.hover{
+    color:blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a.visited{
+    color:blueviolet;
+    background-color: transparent;
+    text-decoration: none;
+}
