@@ -1,18 +1,36 @@
+body {
+    margin:0;
+}
 .navbar{
     overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
 }
 .navbar a{
     float: left;
-    color: black;
+    color: white;
     text-align: center;
     padding: 12px 14px;
-    font-size: 100%
+    font-size: 16px;
 }
 .navbar a:hover {
     text-decoration: underline;
+    background-color: lightgray;
+    color: black;
 }
 .navbar a.active{
     text-decoration: bold;
+}
+.main{
+    padding: 16px;
+    margin-top: 30px;
+}
+.darkmode{
+    background-color: #202020;
+    color:white;
 }
 a{
     font-family: Helvetica;
