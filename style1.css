@@ -1,24 +1,24 @@
-h1{
+.navbar{
+    overflow: hidden;
+}
+.navbar a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px 14px;
+    font-size: 100%
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
+.navbar a.active{
+    text-decoration: bold;
+}
+a{
     font-family: Helvetica;
     font-size: "100%";
 }
-h2{
-    font-family: Helvetica;
-    font-size: "100%";
-}
-h3{
-    font-family: Helvetica;
-    font-size: "100%";
-}
-h4{
-    font-family: Helvetica;
-    font-size: "100%";
-}
-h5{
-    font-family: Helvetica;
-    font-size: "100%";
-}
-h6{
+h1,h2,h3,h4,h5,h6{
     font-family: Helvetica;
     font-size: "100%";
 }
