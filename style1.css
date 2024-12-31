@@ -12,20 +12,26 @@ body {
 }
 .navbar a, .darkmode .navbar a{
     float: left;
-    color: white;
     text-align: center;
     padding: 12px 14px;
     font-size: 16px;
+}
+.navbar a:link, .darkmode .navbar a:link{
+    color: white;
+    background-color: black;
+    transition: 0.2s;
 }
 .navbar a:hover, .darkmode .navbar a:hover{
     text-decoration: none;
     background-color: lightgray;
     color: black;
+    transition: 0.2s;
 }
 .navbar a.active, .darkmode .navbar a:active{
     color: white;
     font-weight: bold;
     text-decoration: none;
+    transition: 0.2s;
 }
 .navbar a:link, .darkmode .navbar a:link, .navbar a:visited, .darkmode .navbar a:visited{
     color: white;
