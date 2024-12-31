@@ -1,6 +1,16 @@
 body {
     margin:0;
 }
+.imgbox{
+    display: grid;
+    height: "100%";
+    width: "100%";
+}
+.fit{
+    max-width: "100%";
+    max-height: 100vh;
+    margin: auto
+}
 .navbar, .darkmode .navbar{
     overflow: hidden;
     background-color: black;
@@ -19,19 +29,16 @@ body {
 .navbar a:link, .darkmode .navbar a:link{
     color: white;
     background-color: black;
-    transition: 0.2s;
 }
 .navbar a:hover, .darkmode .navbar a:hover{
     text-decoration: none;
     background-color: lightgray;
     color: black;
-    transition: 0.2s;
 }
 .navbar a.active, .darkmode .navbar a:active{
     color: white;
     font-weight: bold;
     text-decoration: none;
-    transition: 0.2s;
 }
 .navbar a:link, .darkmode .navbar a:link, .navbar a:visited, .darkmode .navbar a:visited{
     color: white;
