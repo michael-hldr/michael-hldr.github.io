@@ -18,7 +18,7 @@ body {
     font-size: 16px;
 }
 .navbar a:hover, .darkmode .navbar a:hover{
-    text-decoration: underline;
+    text-decoration: none;
     background-color: lightgray;
     color: black;
 }
@@ -29,6 +29,7 @@ body {
 }
 .navbar a:link, .darkmode .navbar a:link, .navbar a:visited, .darkmode .navbar a:visited{
     color: white;
+    text-decoration: none;
 }
 .main{
     padding: 16px;
