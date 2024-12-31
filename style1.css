@@ -36,7 +36,7 @@ body {
     background-color: #202020;
     color:white;
 }
-.darkmode a:link, .darkmode a:hover, .darkmove a:visited{
+.darkmode a:link, .darkmode a:hover, .darkmode a:visited, .darkmode a:active{
     color: white;
 }
 a{
