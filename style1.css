@@ -4,6 +4,7 @@ body {
 .navbar, .darkmode .navbar{
     overflow: hidden;
     background-color: black;
+    color: white;
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,7 +27,7 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
-.navbar a:link{
+.navbar a:link, .darkmode .navbar a:link{
     color: white;
 }
 .main{
