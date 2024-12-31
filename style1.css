@@ -22,7 +22,11 @@ body {
     color: black;
 }
 .navbar a.active{
-    text-decoration: bold;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navbar a:link{
+    color: white;
 }
 .main{
     padding: 16px;
@@ -31,6 +35,9 @@ body {
 .darkmode{
     background-color: #202020;
     color:white;
+}
+.darkmode a:link, .darkmode a:hover, .darkmove a:visited{
+    color: white;
 }
 a{
     font-family: Helvetica;
@@ -45,17 +52,18 @@ p{
     font-size: "100%";
 }
 a:link{
-    color:blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a.hover{
-    color:blue;
+    color: black;
     background-color: transparent;
     text-decoration: underline;
 }
-a.visited{
-    color:blueviolet;
+a.hover{
+    color: black;
     background-color: transparent;
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: bold;
+}
+a.visited{
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
 }
