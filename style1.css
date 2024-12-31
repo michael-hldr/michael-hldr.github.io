@@ -27,7 +27,7 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
-.navbar a:link, .darkmode .navbar a:link{
+.navbar a:link, .darkmode .navbar a:link, .navbar a:visited, .darkmode .navbar a:visited{
     color: white;
 }
 .main{
