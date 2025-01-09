@@ -22,19 +22,33 @@
 <!--This code is not mine-->
 <div class="main">
 <h1>Contact me</h1>
+<p>
+    Thank you for your interest in contacting me. I will try to respond within two business days.
+</p>
 <form name="submit-to-google-sheet">
-        <input type="text" name="Name" placeholder="Your Name" required />
+        <input
+        type="text"
+        name="Name"
+        cols="50"
+        placeholder="Your Name"
+        required
+        />
+        <br/><br/>
         <input
           type="email"
           name="email"
+          cols="50"
           placeholder="Your Email"
           required
         />
+        <br/><br/>
         <textarea
           name="Message"
           rows="6"
+          cols="50"
           placeholder="Your Message"
         ></textarea>
+        <br/>
         <button type="submit" class="btn btn2">Submit</button>
 </form>
 
