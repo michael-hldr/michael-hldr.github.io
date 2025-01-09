@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Engineering Strategies & Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/courses">APS112</a>
+    <a class="active" href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+
+<!--This code is not mine-->
+<div class="main">
+<h1>Contact me</h1>
+<form name="submit-to-google-sheet">
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          name="Message"
+          rows="6"
+          placeholder="Your Message"
+        ></textarea>
+        <button type="submit" class="btn btn2">Submit</button>
+</form>
+
+</div>
+  
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxuJG97-iwA-yCYfr-Z_sZHdroInvrzsa7B8gqgkQ35q7qDNpDFRCZFNAYlHCb43sUmxw/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!";
+                setTimeout(function(){
+                message.innerHTML = "";}, 1000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
