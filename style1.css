@@ -62,7 +62,9 @@ p{
     font-size: "100%";
 }
 .tab{
-    text-indent: 40px;
+    font-size: "100%";
+    font-family: Helvetica;
+    margin-left: 40px;
 }
 a:link, a:visited{
     color: black;
