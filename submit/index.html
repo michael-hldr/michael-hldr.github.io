@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/courses">Courses</a>
+    <a class="active" href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+
+<!--This code is not mine-->
+<div class="main">
+<h1><br/><br/>Submit</h1>
+<p>
+    Box 1
+</p>
+<form name="submit-to-google-sheet">
+        <input
+        type="text"
+        name="Box 1"
+        cols="50"
+        placeholder="Box 1"
+        required
+        />
+        <br/><br/>
+        <input
+          type="text"
+          name="Box 2"
+          cols="50"
+          placeholder="Box 2"
+        />
+        <br/><br/>
+        <input
+          name="Box 3"
+          cols="50"
+          placeholder="Box 3"
+        ></input>
+        <br/><br/>
+        <input
+          name="Box 4"
+          cols="50"
+          placeholder="Box 4"
+        ></input>
+        <br/><br/>
+        <input
+          name="Box 5"
+          cols="50"
+          placeholder="Box 5"
+        ></input>
+        <br/><br/>
+        <button type="submit" class="btn btn2">Submit</button>
+        <br/><br/>
+        <p>
+            Last updated: 01/31/2025
+        </p>
+</form>
+
+</div>
+  
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwd9CPrKxvgOsU0GaGD3CCBHDtBa0YiGX_pCk1RfTaJ7_TTbxFtjxpfk6HCTeNSYdH5/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!";
+                setTimeout(function(){
+                message.innerHTML = "";}, 1000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
