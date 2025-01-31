@@ -2,7 +2,7 @@
 <html lang="en-ca">
 <head>
     <meta charset="UTF-8">
-    <title>Contact me</title>
+    <title>Submit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style1.css">
 </head>
@@ -16,16 +16,13 @@
     </a>
     <a href="/projects">Projects</a>
     <a href="/courses">Courses</a>
-    <a class="active" href="/contact">Contact</a>
+    <a href="/contact">Contact</a>
     <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
 </nav>
 
 <!--This code is not mine-->
 <div class="main">
 <h1><br/><br/>Submit</h1>
-<p>
-    Box 1
-</p>
 <form name="submit-to-google-sheet">
         <input
         type="text"
@@ -68,9 +65,8 @@
 </form>
 
 </div>
-  
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwd9CPrKxvgOsU0GaGD3CCBHDtBa0YiGX_pCk1RfTaJ7_TTbxFtjxpfk6HCTeNSYdH5/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLZ4SXkA_s8au51hHYWPNp3JGfXLJNvdGfmVwmWc2kn2NGSyyrbBXuTFAOmf0O7Kxn/exec'
     const form = document.forms['submit-to-google-sheet']
   
     form.addEventListener('submit', e => {
