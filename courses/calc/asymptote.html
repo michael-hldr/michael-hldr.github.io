@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a class="active" href="/courses">Courses</a>
+    <a href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+<head>
+    <meta charset="UTF-8">
+    <title>Vertical Asymptotes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<div class="main">
+<h1><br/>Vertical Asymptotes</h1>
+<p>
+    I will be referring to parts of <a href="https://www.desmos.com/calculator/k7d9fvhvpy">
+        this desmos graph
+    </a> throughout this page. I can not remember if we learned this method in MAT187 last year 
+    to solve these kinds of integrals, but I remember using my method for other purposes and it 
+    feels the most logical to me.<br/><br/>
+
+    I have heard some first-year engineering students believe that any integral with a 
+    vertical asymptote must be divergent. Let's try one out:<br/>
+
+    \[\int_{0}^{4} \frac{2}{\sqrt{x}} \, dx \]
+
+    In the graph, I have divided this area into the blue and green regions. 
+    The blue region can be solved by calculating the area of the rectangle. 
+    We are much more interested in the green region, which contains the asymptote. 
+    To make this finding the green region easier for ourselves, we can integrate with respect to 
+    \(y\) rather than to \(x\). To do this, we must rearrange the above equation.<br/>
+
+    \[y = \frac{2}{\sqrt{x}}\]
+    \[\sqrt{x} = \frac{2}{y}\]
+    \[x = \frac{4}{y^2}\]
+
+    With \(y = 1\) as the top of our rectangle, that will be where the integral for finding 
+    the green region starts. Thus, we will now need to solve the below integral:<br/>
+
+    \[\int_{1}^{a} \frac{4}{y^2} \, dx \]
+
+    When solving improper integrals like this one, we want to find the limit as a variable 
+    approaches infinity (i.e. \(\lim_{a\to\infty}\int_{1}^{\infty} \frac{1}{y^2}\)). 
+    Using power rule on this integral, we get the below equation:<br/>
+
+    \[\lim_{a\to\infty}(-\frac{4}{a}) - (-\frac{4}{1})\]
+
+    We know the limit as $a$ approaches infinity for $-\frac{4}{a}$ is $0$, so we can remove 
+    it from the equation. That leaves us with \(\frac{4}{1} = 4\). We can then add the area of the 
+    rectangle to find the answer to \(\int_{0}^{4} \frac{2}{\sqrt{x}} \, dx\).<br/>
+
+    \[4 + 4 = \fbox{8}\]
+
+    This is not to say every integral on a vertical asymptote is \(0\). If you try the same method 
+    on \(\int_0^1\frac{1}{x^2}\, dx\), you will find the integral diverges. In fact, this is true 
+    of any integral \(\int_0^c\frac{1}{x^b}\, dx\), where \(b \leq 1\) and \(c\) is any 
+    positive real number.
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
