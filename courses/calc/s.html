@@ -13,18 +13,20 @@
 <style>
 </style>
 <body>
-    <nav class="navbar">
-        <a href="/">
-            <img src="/files/christmas_ice.jpg" width="25" height="14">
-            &nbsp;&nbsp;Home
-        </a>
-        <a href="/projects">Projects</a>
-        <a href="/courses">Courses</a>
-        <a href="/contact">Contact</a>
-        <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
-    </nav>
-    <div class="main">
-    <h1><br/>Vertical Asymptotes</h1>
+<header>  
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/courses">Courses</a>
+    <a href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+</header>
+<div class="main">
+    <h1>Vertical Asymptotes</h1>
     <p>
         Posted: 02/03/2025<br/><br/>
         I will be referring to parts of <a href="https://www.desmos.com/calculator/k7d9fvhvpy">
@@ -74,11 +76,11 @@
         \(\int_0^c\frac{1}{x^b}\, dx\) would diverge if \(b \leq 1\). This has been corrected.
     </p>
     </div>
-    
-    <script>
-        function darkmode(){
-            document.body.classList.toggle("darkmode");
-        }
-    </script>
-    </body>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
 </html>
