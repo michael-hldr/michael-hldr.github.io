@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Midterm #2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/courses">Courses</a>
+    <a href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+<div class="main">
+<h1><br/>Midterm 2</h1>
+<p>
+    Posted: 03/05/2025<br/><br/>
+    I have made this page in response to a first-year student unable to attend the Civ Club 
+    Review Session for the second MAT187 midterm. This page is intended to be an overview of all 
+    the concepts learned since the first midterm. I did not have much time to assemble this page, 
+    so it lacks practice problems in some areas. If you have any questions about prior content 
+    or you would like some practice problems, please contact me. I can not guarantee I will be 
+    able to give some to you prior to your midterm as my Wednesdays and Thursdays are rather busy.
+    <br/><br/>
+</p>
+<h2>Integration Techniques</h2>
+<p>
+    In MAT187 last year, this was the first thing we touched on. I am not sure why it is being 
+    taught so late now, I think they are a natural continuation of where we left off at the end of 
+    MAT186 (integration by substitution).
+</p>
+<h3>Integration By Parts</h3>
+<p>
+    Suppose \(u\) and \(v\) are differentiable functions. You might recall the dervative of \(uv\):
+
+    \[\frac{\mathrm d}{\mathrm dx}[u(x)v(x)] = u'(x)v(x) + u(x)v'(x)\]
+
+    If we integrate, we get:
+
+    \[u(x)v(x) = \int v(x) \, \mathrm du(x) + \int u\, \mathrm dv(x)\]
+
+    Rearranging, we get:
+
+    \[\int u\, \mathrm dv(x) = u(x)v(x) - \int v(x) \, \mathrm du(x)\]
+
+    This is the basis of integration by parts. If you need to find the integral of two functions 
+    multiplied together, the goal is to make it solvable using other methods. Let us look at an 
+    example:
+    \[\int \ln x \,\mathrm dx\]
+
+    You might remember the derivative of \(\ln x\) is \(\frac1x\). Looking at the rearranged formula 
+    for integration by parts, let us make \(ln x \) our \(u\). This means our \(dv\) must be \(1\). 
+    Plugging this into our formula, we get:
+    \[\int \ln x \,\mathrm dx = x\ln x - \int \frac{x}{x} \, \mathrm dx\]
+    \[\int \ln x \,\mathrm dx = x\ln x - \int 1 \, \mathrm dx\]
+    \[\int \ln x \,\mathrm dx = x\ln x - x + C\]
+
+    As an additional exercise to the reader, try out the following problem:
+    \[\int_1^2 x^2e^x\,\mathrm dx\]
+
+    Sometimes, things cancel out easily or the derivatives of \(u\) run out. Sometimes, neither 
+    occurs. Let us look at an example of this:
+    \[\int e^x\sin x \,\mathrm dx\]
+
+    You are probably not sure which one is \(u\) and which is \(v\). As it turns out, that does not 
+    matter much. Let us make \(\sin x\) our \(u\).
+    \[\int e^x\sin x \, \mathrm dx\ = e^x\sin x - \int e^x \cos x \,\mathrm dx\]
+
+    That did not get us to a solution, let's try again:
+    \[\int e^x\cos x \, \mathrm dx\ = e^x\cos x + \int e^x \sin x \,\mathrm dx\]
+    \[\int e^x\sin x \, \mathrm dx\ = e^x\sin x - e^x\cos x - \int e^x \sin x \,\mathrm dx\]
+
+    Now, we can move that integral to the left side to get:
+    \[2\int e^x\sin x \, \mathrm dx\ = e^x\sin x - e^x\cos x\]
+    Then we can simply divide both sides by 2.
+
+    <!--sin, e^x, ln(x) come to mind. I think those will be my examples.-->
+</p>
+<h3>Trigonometric Substitution</h3>
+<p>
+    This involves some trigonometric identities. I list the most useful ones below, as noted in 
+    last year's lecture slides:
+    \[1 - \sin^2\theta = \cos^2\theta\]
+    \[1 + \tan^2\theta = \sec^2\theta\]
+    \[\sec^2\theta - 1 = \tan^2\theta\]
+    Let us look at an example integral to see how these work:
+    \[\int \frac1{\sqrt{x^2-4}}\, \mathrm dx\]
+
+    Since there is a square root here, the method of solving this integral does not seem clear 
+    with prior knowledge. However, we can substitute \(x = 2\sec\theta\). As with a typical 
+    substitution problem, we must find a relation between \(/mathrm dx\) and \(\mathrm d\theta\). 
+    Taking the derivative, we find \(\mathrm dx = 2\sec\theta\,\tan\theta\). Thus, our integral becomes:
+    \[\int \frac1{\sqrt{4\sec^2\theta - 4}}\,2\sec\theta \, \tan\theta\, \mathrm d\theta\]
+
+    We can then use the second trigonometric identity above to rewrite the integral as:
+    \[\int \frac1{\sqrt{4\tan^2\theta}}\,2\sec\theta \, \tan\theta\, \mathrm d\theta\]
+
+    We can do some further simplification to obtain:
+    \[\int \sec\theta \, \mathrm d\theta\]
+
+    I do not know if the 2T8s are getting a formula sheet with integrals of trigonometric functions. 
+    Either way, feel free to search up the integral of \(\sec\theta\). I will leave substituting the 
+    \(x\) back into this equation as an exercise to the reader.<br/><br/>
+
+    You might have noticed that I used a trigonometric identity to allow me to find the square root. 
+    This kind of simplification is typical of trigonometric substitution problems. In your own time, 
+    try solving the integral below. Remember the identities above and how you might use them. 
+    Please contact me if you have any questions.
+    \[\int \sqrt{9 - x^2} \mathrm dx\]
+</p>
+<h3>Partial Fractions</h3>
+<p>
+    This is more a trick of algebra, but it simplifies the solutions of many integrals you may 
+    encounter. For all steps when solving an integral using this method, when you have 
+    \(\int \frac{P(x)}{Q(x)} \,\mathrm dx\), the degree of \(P(x\) must be less than that of \(Q(x)\). 
+    If it is not, you will need to first use polynomial long division and make the remainder your 
+    new \(P(x)\).<br/><br/>
+
+    When using this method, you factorize the denominator, then split the fraction into ones with one 
+    factor in the denominator, added together. The following example is from last year's lecture 
+    slides:
+    \[\int \frac{34x^4 + 6x^3 + 89x^2 + 26x - 16}{3x^5 + 5x^4 +10x^3 + 20x^2 - 8x} \,\mathrm dx\]
+
+    Let us first factor the denominator:
+    \[\int \frac{34x^4 + 6x^3 + 89x^2 + 26x - 16}{x(3x-1)(x+2)(x^2+4)}\,\mathrm dx\]
+
+    You might recall from long ago (perhaps 8th or 9th Grade) that when adding fractions together, 
+    you will find the least common factor of all of the denominators and multiply the numerators 
+    accordingly. We will do that here.
+    \[\int (\frac Ax + \frac B{3x-1} + \frac C{x+2} + \frac{Dx+E}{x^2 + 4}) \,\mathrm dx\]
+    \[\int (\frac{A(3x-1)(x+2)(x^2+4)}{x(3x-1)(x+2)(x^2+4)} + 
+    \frac{Bx(x+2)(x^2+4)}{x(3x-1)(x+2)(x^2+4)} + 
+    \frac{Cx(3x-1)(x^2+4)}{x(3x-1)(x+2)(x^2+4)} + \frac{(Dx+E)x(3x-1)(x+2)}{x(3x-1)(x+2)(x^2+4)}) 
+    \,\mathrm dx\]
+
+    I will leave the rest of the solution as an exercise to the reader, but the  simplified version 
+    should be as shown below. Keep in mind that the sum of the numerators in the above 
+    integral must equal \(34x^4 + 6x^3 + 89x^2 + 26x - 16\).
+    \[\int (\frac2x + \frac1{3x-1} + \frac7{x+2} + \frac{2x-3}{x^2 + 4}) \,\mathrm dx\]
+    
+    You can then use other methods to solve the integral. There is one other case I would like to 
+    highlight: Repeated factors. Let's say you have an integral:
+    \[\int\frac{2x^2-3x+10}{(x-1)^2(x+2)}\,\mathrm dx\]
+
+    The partial fraction decomposition would look like:
+    \[\int(\frac A{(x-1)^2} + \frac B{x-1} + \frac C{x+2})\,\mathrm dx\]
+
+    The rest of the solution is left as an exercise to the reader.
+</p>
+<h2>Improper Integrals</h2>
+<p>
+    If you were present during the previous review session, you might remember me trying to 
+    talk about sequences and series using improper integrals. Back then, you probably had not 
+    learned about them, but now you have.<br/><br/>
+
+    Improper integrals are integrals with some condition requiring a limit to be taken. This can 
+    be it running to \(\pm \infty\), a vertical asymptote, or maybe something else I forgot about. 
+    A limit must be taken because some number approaches infinity, preventing us from using direct 
+    substitution. Let's look at an example:
+
+    \[\int_0^1\frac1{\sqrt x} \,\mathrm dx \]
+
+    The function has a vertical asymptote at \(x = 0\), so it is improper. I will leave the solution 
+    as an exercise to the reader, but know that it is convergent. In fact, we have a general rule 
+    of convergence for these types of integrals (specifically \(\int_0^a \frac1{x^b}\)), where 
+    \(a\) and \(b\) are real numbers. For the integral to be convergent, \(b < 1\). Otherwise, it 
+    is divergent, and the limit you get when you solve the integral goes to infinity. There is a 
+    similar rule for integrals that go to infinity (\(\int_a^\infty \frac1{x^b}\), where 
+    \(a\) and \(b\) are real numberes). In that case, it is divergent if 
+    \(0 < b \leq 1\). Now for an example:<br/><br/>
+
+    Let's say you are building a rocket to explore the universe. You remember from Grade 12 physics 
+    that \(F_g = \frac{Gm_1m_2}{r^2}\), where \(G = 6.6743\times10^{-11} \mathrm{\frac{N\,m^2}
+    {kg^2}}\), \(m_1\) and \(m_2\) are the two gravitationally attracted masses, and \(r\) is 
+    the distance between them. You also remember that work \(W = F\Delta r\). How much energy would 
+    it take for the rocket to escape Earth's gravitational pull after launching from Earth's surface. 
+    In other words, how much energy would be required to move the rocket from Earth's surface to an 
+    infinite distance away? Some important parameters:<br/><br/>
+    Mass of the Earth: \(5.972 \times 10^{24}\, \mathrm{kg}\)<br/>
+    Mass of your ship: \(14,135\, \mathrm{kg}\)<br/>
+    \(r\) for Earth's surface: \(6.36\times10^6\, \mathrm{m}\)<br/><br/>
+
+    As a bonus, try figuring out how much energy it would take you to fly a rocket from Earth's 
+    core to its surface, assuming you could travel through the planet like you can travel through 
+    space. If you have any questions about this problem or would like a solution, please contact me.
+</p>
+<h3>A potential mistake</h3>
+<p>
+    What if there is a vertical asymptote in the middle of your integral? For example, 
+    \(\int_{-1}^1 \frac{1}{x^2}\). If you evaluate as normal, it may seem like this integral converges, 
+    i.e. it has a solution. However, it does not. To ensure you know whether your integral converges, 
+    you will need to split it at the asymptote, i.e. making it 
+    \(\int_{-1}^0 \frac{1}{x^2}\ + \int_0^1 \frac{1}{x^2}\).
+</p>
+<h2>Power Series</h2>
+<p>
+    A power series is a series of the form \( c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + ... = 
+    \Sigma_{i=0}^{\infty} c_i(x-a)^i \), where \(a\) and \(c\) are constant real numbers. 
+    All Taylor series are power series, and any power series is a Taylor Series 
+    representing some function. All power series converge at \(x = a\). For other real numbers, you 
+    will need to determine the power series' <strong>radius of convergence</strong> \(R\), the 
+    distance from \(a\) up to which the power series is convergent. For values of \(x\) which are 
+    \(R\) away from \(a\), the value may or may not be convergent (you will need to determine this 
+    with a convergence test). The <strong>interval of convergence</strong> describes the interval 
+    where the power series is convergent. <br/><br/>
+
+    You can find the interval of convergence using the ratio test:<br/>
+    If you have a series \(\Sigma_{i=0}^{\infty} a_i\) and we let \(r = \lim_{n\to\infty} |
+    \frac{a_{n+1}}{a_n}|\), then the series converges when \(r < 1\) and diverges when \(r > 1\). 
+    If \(r = 1\), we must use another test. For power series, this usually occurs when \(x\) is 
+    \(R\) away from \(a\). Recall the convergence tests you learned before Midterm 1.<br/><br/>
+
+    I unfortunately did not learn how to find the radius of convergence of the 
+    power series representing the function \(\frac{1}{p(x)}\) using the roots of polynomial \(p(x)\). 
+    Please review it, as it is on the list of concepts for your midterm.<br/><br/>
+
+    Last updated: 03/05/2025
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
