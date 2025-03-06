@@ -7,7 +7,7 @@ img{
 }
 .navbar, .darkmode .navbar{
     overflow: auto;
-    white-space: nowrap;
+    display: flex;
     background-color: black;
     color: white;
     position: fixed;
@@ -22,14 +22,7 @@ img{
     padding: 12px 14px;
     font-size: 16px;
 }
-/*The below is test code. I copied this from w3schools*/
-@media screen and (max-width: 600px) {
-    .topnav a {
-      float: none;
-      width: 100%;
-    }
-}
-/*The above is test code*/
+/*The @media for this is at the bottom*/
 .navbar a:link, .darkmode .navbar a:link{
     color: white;
     background-color: black;
@@ -87,3 +80,10 @@ a.hover{
     text-decoration: underline;
     font-weight: bold;
 }
+/*The below is test code. I copied some of this from w3schools*/
+@media screen and (max-width: 600px) {
+    .navbar a {
+        flex-direction: column;
+    }
+}
+/*The above is test code*/
