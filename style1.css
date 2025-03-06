@@ -6,7 +6,7 @@ img{
     height: auto;
 }
 .navbar, .darkmode .navbar{
-    overflow: hidden;
+    overflow: auto;
     background-color: black;
     color: white;
     position: fixed;
