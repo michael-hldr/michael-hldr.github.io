@@ -7,12 +7,12 @@ img{
 }
 .navbar, .darkmode .navbar{
     overflow: auto;
+    white-space: nowrap;
     background-color: black;
     color: white;
     position: fixed;
     top: 0;
     width: 100%;
-    max-height: 10%;
     text-align: center;
     z-index: 3;
 }
