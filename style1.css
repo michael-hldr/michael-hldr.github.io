@@ -12,6 +12,7 @@ img{
     position: fixed;
     top: 0;
     width: 100%;
+    max-height: 10%;
     text-align: center;
 }
 .navbar a, .darkmode .navbar a{

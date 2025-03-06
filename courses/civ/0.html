@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Vectors & Resultant forces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+</style>
+<body>
+<header>  
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/courses">Courses</a>
+    <a href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+</header>
+<div class="main" style="padding-top: 30px">
+    <p>
+        <a href="./">Previous section</a>
+    </p>
+    <h1>Vectors & Resultant forces (High School Review for CIV100 & CIV102)</h1>
+    <p>
+        If you are comfortable with vector addition, you can skip to the next section.<br/><br/>
+
+        There are two methods of vector addition: law of cosines and using components. Law of 
+        cosines treats the two vectors, positioned head to tail, and the resultant as three edges 
+        of a triangle as shown below. If you have the magnitudes of each vector and the angle 
+        \(\theta\), you can use cosine law to find the magnitude of the resultant. Using components, 
+        you split the vectors into each of their x and y components and add each of them together 
+        to find the x and y components, as shown below.
+
+        <figure>
+            <img src="./files/resultants.png" alt="" style="width:100%; height:auto; max-width: 650px;">
+            <figcaption><p>The two methods of vector addition
+            </p></figcaption>
+        </figure><br/>
+
+        A couple quick practice problems. These are very easy and should just be a confirmation of 
+        your understanding:<br/>
+        1. If \(\vec v_1\) and \(\vec v_2 \) are attached tail-to-tail with an angle of \(30\) 
+        degrees and magnitudes of \(3\) and \(5\), respectively, what is the magnitude of 
+        \(\vec v_1 + \vec v_2\)? What is the angle between \(\vec v_1 + \vec v_2\) and 
+        \(\vec v_1\) when the two vectors are placed tail-to-tail?<br/>
+        2. If \(\vec v_1 = (1, 2)\), \(\vec v_2 = (4, -3)\), and \(\vec v_3 = (-1, 6)\), find 
+        \(\vec v_1 + 6\vec v_2 - 3\vec v_3\).
+    </p>
+    <!--Un-comment the below when it is complete.-->
+    <!--<p align="right">
+        <a href="./1">Next section</a>.&emsp;&emsp;
+    </p>-->
+    <p>
+        Last updated: 03/05/2025
+    </p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
