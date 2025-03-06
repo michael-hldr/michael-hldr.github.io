@@ -99,7 +99,7 @@
 
     Since there is a square root here, the method of solving this integral does not seem clear 
     with prior knowledge. However, we can substitute \(x = 2\sec\theta\). As with a typical 
-    substitution problem, we must find a relation between \(/mathrm dx\) and \(\mathrm d\theta\). 
+    substitution problem, we must find a relation between \(\mathrm dx\) and \(\mathrm d\theta\). 
     Taking the derivative, we find \(\mathrm dx = 2\sec\theta\,\tan\theta\). Thus, our integral becomes:
     \[\int \frac1{\sqrt{4\sec^2\theta - 4}}\,2\sec\theta \, \tan\theta\, \mathrm d\theta\]
 
@@ -173,10 +173,10 @@
 
     The function has a vertical asymptote at \(x = 0\), so it is improper. I will leave the solution 
     as an exercise to the reader, but know that it is convergent. In fact, we have a general rule 
-    of convergence for these types of integrals (specifically \(\int_0^a \frac1{x^b}\)), where 
+    of convergence for these types of integrals (specifically \(\int_0^a \frac1{x^b}\,\mathrm dx\)), where 
     \(a\) and \(b\) are real numbers. For the integral to be convergent, \(b < 1\). Otherwise, it 
     is divergent, and the limit you get when you solve the integral goes to infinity. There is a 
-    similar rule for integrals that go to infinity (\(\int_a^\infty \frac1{x^b}\), where 
+    similar rule for integrals that go to infinity (\(\int_a^\infty \frac1{x^b}\,\mathrm dx\), where 
     \(a\) and \(b\) are real numberes). In that case, it is divergent if 
     \(0 < b \leq 1\). Now for an example:<br/><br/>
 
@@ -198,10 +198,10 @@
 <h3>A potential mistake</h3>
 <p>
     What if there is a vertical asymptote in the middle of your integral? For example, 
-    \(\int_{-1}^1 \frac{1}{x^2}\). If you evaluate as normal, it may seem like this integral converges, 
+    \(\int_{-1}^1 \frac{1}{x^2}\,\mathrm dx\). If you evaluate as normal, it may seem like this integral converges, 
     i.e. it has a solution. However, it does not. To ensure you know whether your integral converges, 
     you will need to split it at the asymptote, i.e. making it 
-    \(\int_{-1}^0 \frac{1}{x^2}\ + \int_0^1 \frac{1}{x^2}\).
+    \(\int_{-1}^0 \frac{1}{x^2}\,\mathrm dx + \int_0^1 \frac{1}{x^2}\,\mathrm dx\).
 </p>
 <h2>Power Series</h2>
 <p>
