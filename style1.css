@@ -22,6 +22,14 @@ img{
     padding: 12px 14px;
     font-size: 16px;
 }
+/*The below is test code. I copied this from w3schools*/
+@media screen and (max-width: 600px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+}
+/*The above is test code*/
 .navbar a:link, .darkmode .navbar a:link{
     color: white;
     background-color: black;
