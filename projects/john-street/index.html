@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>John Street</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<style>
+.column1 {
+  float: left;
+  width: 58%;
+  padding: 0px;
+}
+
+.column2 {
+  float: right;
+  width: 42%;
+  padding: 0px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+<div class="main">
+<h1>John Street</h1>
+<h3>Leslie Street to Woodbine Avenue</h3>
+<div class="column1">
+<p>
+    This study is examining traffic conditions on John Street between Leslie Street and Woodbine Avenue, including all intersections 
+    in the study area. The road is four lanes with left- and right-turn lanes at most signalized intersections. 
+    Based on site visits conducted in late April and May 2025, John Street appears to operate smoothly 
+    during the AM rush hour, with problems only potentially present at Woodbine Avenue and on the left turn lane from 
+    southbound Leslie Street to eastbound John Street.<br/><br/>
+
+    Based on site visits in late April and May, traffic problems exist westbound during the PM rush hour. Both turn lanes from 
+    westbound John onto Leslie Street were overcapacity at least once when I visited. The left turn lane was overcapacity during 
+    most visits during the afternoon rush hour. All other directions appear to be operating smoothly, except turn lanes from 
+    eastbound John to Woodbine Avenue.<br/><br/>
+
+    As part of this study, a variety of solutions will be considered. This includes the betterment of alternate modes of 
+    transport, such as cycling and public transit. York Region Transit (YRT)'s Route 2 - Milliken is frequently 
+    crowded for the westbound trips travelling in the area within the first half of the 5 p.m. hour, and buses have 
+    neared capacity during multiple site visits. During a site visit on May 15, 2025, people on the bus were standing 
+    right up to the yellow line at the front of the bus. John Street includes a multi-use path on its north side, 
+    which connects to a north-south path at Leslie Street. West of there, there is no bike infrastructure on John.<br/><br/>
+
+    Currently, preliminary data is being collected to determine where potential problems throughout the study area may be. Once 
+    those are determined, more detailed data will be measured at relevant points in the study area to determine
+</p>
+</div>
+<div class="column2">
+    <figure>
+        <img src="./files/May 15 traffic.jpg" alt="A large group of cars not moving betweeen Leslie Street and 
+        the bridge over Highway 404 in the distance" style="width:100%; height:auto">
+        <figcaption><p>Traffic backed up for several hundred metres as seen from Leslie Street.
+        </p></figcaption>
+    </figure>
+</div>
+<p>
+    Last updated: 5/15/2025
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
