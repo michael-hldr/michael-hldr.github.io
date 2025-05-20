@@ -46,6 +46,7 @@ img{
     padding: 16px;
     margin-top: 30px;
 }
+/*When browser is set to dark mode*/
 @media (prefers-color-scheme: dark){
     body{
         background-color: #202020;
@@ -67,6 +68,7 @@ img{
     }
     
 }
+/*When browser is set to light mode*/
 @media (prefers-color-scheme: light) {
     body{
         background-color: white;
