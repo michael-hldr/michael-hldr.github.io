@@ -1,3 +1,4 @@
+/*As of May 20, 2025, dark mode will now be determined by browser*/
 body {
     margin:0;
 }
@@ -5,7 +6,7 @@ img{
     max-width: 100%;
     height: auto;
 }
-.navbar, .darkmode .navbar{
+.navbar{
     overflow: auto;
     display: flex;
     background-color: black;
@@ -16,7 +17,7 @@ img{
     text-align: center;
     z-index: 3;
 }
-.navbar a, .darkmode .navbar a{
+.navbar a{
     float: left;
     text-align: center;
     padding: 12px 14px;
@@ -37,7 +38,7 @@ img{
     font-weight: bold;
     text-decoration: none;
 }
-.navbar a:link, .darkmode .navbar a:link, .navbar a:visited, .darkmode .navbar a:visited{
+.navbar a:link, .navbar a:visited, .darkmode .navbar a:visited, .darkmode .navbar a:link{
     color: white;
     text-decoration: none;
 }
@@ -45,12 +46,58 @@ img{
     padding: 16px;
     margin-top: 30px;
 }
-.darkmode{
-    background-color: #202020;
-    color:white;
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: #202020;
+    }
+    a:link, a:hover, a:visited, a:active,h1,h2,h3,h4,h5,h6,figcaption,p{
+        color: white;
+    }
+    .darkmode{
+        background-color: white;
+    }  
+    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:active, .darkmode a:visited{
+        color: black;
+    }
+    .navbar .darkmode a, .navbar .darkmode a:link, .navbar .darkmode a:active, .navbar .darkmode a:visited{
+        color: white;
+    }
+    .navbar .darkmode a:hover{
+        color:black;
+    }
+    
 }
-.darkmode a:link, .darkmode a:hover, .darkmode a:visited, .darkmode a:active{
-    color: white;
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: white;
+    }
+    a:link, a:visited{
+        color: black;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    a.hover{
+        color: black;
+        background-color: transparent;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    h1,h2,h3,h4,h5,h6,figcaption,p{
+        color: black;
+    }
+    .darkmode{
+        background-color: #202020;
+        color:white;
+    }
+    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:visited{
+        color: white;
+    }
+    .navbar .darkmode a{
+        color: white;
+    }
+    .navbar .darkmode a:hover{
+        color:black;
+    }
 }
 a{
     font-family: Helvetica;
@@ -68,17 +115,6 @@ p{
     font-size: "100%";
     font-family: Helvetica;
     margin-left: 40px;
-}
-a:link, a:visited{
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a.hover{
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
-    font-weight: bold;
 }
 /*The below is test code. I copied some of this from w3schools*/
 @media screen and (max-width: 600px) {
