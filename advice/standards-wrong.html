@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Sometimes standards are wrong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+.column1 {
+  float: left;
+  width: 75%;
+  padding: 0px;
+}
+
+.column2 {
+  float: right;
+  width: 25%;
+  padding: 0px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<body>
+<header>  
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/contact">Contact</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+</header>
+<div class="main" style="padding-top: 30px">
+    <h1>Sometimes standards are wrong</h1>
+    <h4>Posted: 06/08/2025</h4>
+    <p>
+        While working on my <a href="/projects">projects</a>, I have encountered some standards and practices 
+        that conflict with each other (i.e. one disobeys the other). Why is this important?
+    </p>
+    <p>
+        -Things that look like standards at first glance may be treated more like loose guidelines or 
+        objectives in practice.<br/>
+        -Organizations may be unaware that something they operate or build is below standard.<br/>
+        -Organizations can misunderstand standards and laws and mistakenly disobey them by lack of understanding.<br/>
+        -You can misunderstand standards and laws and mistakenly think organizations are disobeying them by 
+        your lack of understanding.<br/>
+        -Such standards can impact what you are allowed to or should design, 
+        even if someone is not following them at that particular moment.<br/>
+        -Others' mistakes are harder to correct the more people make them.
+    </p>
+    <p>
+        Due to the above, it is important to triangulate (finding multiple sources that back up your claim) and/or 
+        find potential deviations from standards where possible. These conflicts occur more often than one might 
+        think. Below, I list two examples from my projects this year where standards have conflicted with 
+        practice or each other. Both are transit and transportation-related as my projects 
+        have mostly been in that area.
+    </p>
+<div class="column2">
+    <figure>
+        <img src="./files/asymmetry.jpg" alt="This street's yellow line is off-centre, creating one lane which is 
+        rather narrow and one which is rather wide, allowing for street parking on that side." 
+        style="width:100%; height:auto">
+        <figcaption><p>A similar street I found this morning</p></figcaption>
+    </figure>
+    <figure>
+        <img src="./files/crowded-bus.jpg" alt="The inside of a bus with several people standing. There was one 
+        more person on board than provincial regulations allow." 
+        style="width:100%; height:auto">
+        <figcaption><p>This bus had one too many people.</p></figcaption>
+    </figure>
+</div>
+<div class="column1">
+    <h2>Case 1: Lane widths</h2>
+    <p>
+        After showing my friend <a href="https://www.linkedin.com/in/lucas-s-gaspari/">Lucas Gaspari</a> 
+        a selection of route ideas for my <a href="/projects/wans/">West Aurora Network Study (WANS)</a> 
+        last week, he told me that Seaton Drive (a road which one route idea would run on) had lane widths 
+        too narrow for bus operation. The street itself has two asymmetrically wide lanes, with one side 
+        allowing street parking. Yesterday morning, I went there and measured the lane widths. 
+        Indeed, the shorter side is only 3.0 to 3.2 metres wide, lower than the 3.3 metres 
+        <a href="https://online.flippingbook.com/view/255630976/106/">YRT requires</a>. 
+        However, YRT is planning to run 
+        <a href="https://online.flippingbook.com/view/255630976/68/">a school special along Seaton Drive</a> 
+        in September despite the narrow lanes. Some other Aurora streets including those used by some of my other 
+        route ideas have similar designs, 
+        this morning I observed it on Batson Drive west of Old Yonge and all of Walton Street north of Birch 
+        Court.
+    </p>
+</div>
+    <p>
+        With a potential conflict emerging, I looked 
+        to see what other Greater Toronto agencies require. The City of Toronto 
+        <a href="https://www.toronto.ca/wp-content/uploads/2017/11/921b-ecs-specs-roaddg-Lane_Widths_Guideline_Version_2.0_Jun2017.pdf">
+            strongly recommends
+        </a> 
+        a 3.3-metre lane width, but considers 3.0 metres the absolute minimum if 3.3 metres can not be acheived 
+        for queue jump lanes and at stops. 
+        With the above in mind, I will treat a 3.3-metre width as an important objective rather than a 
+        constraint with 3.0 metres being the constraint. I have not yet determined exactly how important a 
+        3.3-metre lane width should be, but it appears the City of Toronto only allows 3.0-metre lanes when 
+        absolutely necessary.
+    </p>
+    <h2>Case 2: How crowded can a bus be?</h2>
+    <p>
+        When I originally conceived this article, it was primarily focused on this case (I found case 1 while 
+        thinking about this). While looking at transit service standards of a few agencies for my 
+        <a href="/projects/7-martin-grove/">7 - Martin Grove project</a> last winter, I came across a part in
+        <a href="https://pub-brampton.escribemeetings.com/filestream.ashx?DocumentId=98246">Brampton's standard</a> 
+        about the <i>Public Vehicles Act</i> (PVA), 
+        an Ontario law which had a provision prohibiting any bus 
+        operating across municipal borders from having more standing passengers than a third of its total seats. 
+        This was news to me, as I initially thought it applied to controlled-access highways rather than 
+        across municipal borders.
+    </p>
+    <p>
+        The confusion was not limited to me, I had heard others also claim that such a regulation only applied to 
+        highways and in practice, I have only seen it applied to York Region Transit (YRT) route 
+        360 - Vaughan Mills/Wonderland, with some buses running on arterial roads rather than highways when they 
+        were too full. However, this rule was never applied consistently. When I later complained to YRT about 
+        crowding I observed while collecting traffic data for 
+        <a href="/projects/john-street/">my John Street project</a> (not mentioning provincial legislation), 
+        they said that such a rule applies to all routes operating on 400-series highways.
+    </p>
+    <p>
+        In the early 2020s, the Ontario government deregulated the intercity bus industry and repealed the 
+        PVA, replacing some of its provisions with 
+        <a href="https://www.ontario.ca/laws/regulation/210418">a new regulation</a> under the 
+        <i>Ontario Highway Traffic Act</i> (OHTA) which included the aforementioned 
+        provision. The new regulation exempted buses travelling within Waterloo Region and Niagara Region, as well 
+        as considering both sides of Steeles Avenue as part of the City of Toronto. 400-series highways were not 
+        mentioned in this law and all public roads are covered under the OHTA.
+    </p>
+    <p>
+        Some of the provisions in this new regulation lead me to believe that Brampton's interpretation is 
+        accurate. Both sides of Steeles Avenue being considered part of the City of Toronto is important for 
+        the TTC, which has many routes ending at Steeles and most of its bus fleet has fewer sets than other 
+        Greater Toronto transit agencies. As well, both Waterloo and Niagara have regional transit agencies 
+        which would benefit from this regulation not applying to them.
+    </p>
+    <p>
+        With this in mind, I continue to follow Brampton's interpretation of the old Act. However, I 
+        will contact others in the field (perhaps linking this post) after this page is published.
+    </p>
+    <h2>What to make of this</h2>
+    <p>
+        It's rather unfortunate that conflicting official sources are a problem we have to deal with, but it's 
+        clear that people in the industry often make mistakes. To avoid potential misinformation from spreading, 
+        we need to ensure the information we have is accurate when we work on projects, when we write reports, and 
+        in communication with the public about whatever we or others are designing. If you are confident, 
+        perhaps reach out to whoever made the standard or whoever is disobeying it. I plan on exploring both 
+        cases more in the coming weeks to ensure I have a full understanding of them.
+    </p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>

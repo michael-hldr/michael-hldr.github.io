@@ -34,7 +34,6 @@ img{
     color: black;
 }
 .navbar a.active, .darkmode .navbar a:active{
-    color: white;
     font-weight: bold;
     text-decoration: none;
 }
@@ -45,6 +44,9 @@ img{
 .main{
     padding: 16px;
     margin-top: 30px;
+}
+.centre h1, .centre p, .centre h2, .centre h3, .centre h4, .centre h5, .centre h6, .centre a{
+    text-align: center;
 }
 /*When browser is set to dark mode*/
 @media (prefers-color-scheme: dark){
