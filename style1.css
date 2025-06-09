@@ -53,13 +53,13 @@ img{
     body{
         background-color: #202020;
     }
-    a:link, a:hover, a:visited, a:active,h1,h2,h3,h4,h5,h6,figcaption,p{
+    a:link, a:hover, a:visited, a:active,h1,h2,h3,h4,h5,h6,figcaption,p,.tab p, .tab a{
         color: white;
     }
     .darkmode{
         background-color: white;
     }  
-    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:active, .darkmode a:visited{
+    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:active, .darkmode a:visited, .darkmode .tab a, .darkmode .tab p{
         color: black;
     }
     .navbar .darkmode a, .navbar .darkmode a:link, .navbar .darkmode a:active, .navbar .darkmode a:visited{
@@ -86,14 +86,14 @@ img{
         text-decoration: underline;
         font-weight: bold;
     }
-    h1,h2,h3,h4,h5,h6,figcaption,p{
+    h1,h2,h3,h4,h5,h6,figcaption,p,.tab p, .tab a{
         color: black;
     }
     .darkmode{
         background-color: #202020;
         color:white;
     }
-    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:visited{
+    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:visited, .darkmode .tab p, .darkmode .tab a{
         color: white;
     }
     .navbar .darkmode a{
@@ -114,6 +114,12 @@ img{
     }
     /*unsure about what width should be here*/
     .column2{
+        /*The below centres images on mobile*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /*The above centres images on mobile*/
+        float: none;
         width: 66%;
         padding: 0px;
     }
@@ -138,7 +144,7 @@ img{
 }
 .row::after {
     content: "";
-     clear: both;
+    clear: both;
     display: table;
 }
 a{
