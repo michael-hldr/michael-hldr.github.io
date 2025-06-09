@@ -104,9 +104,42 @@ img{
     }
 }
 @media only screen and (max-width: 800px){
+    /*For features unsupported on mobile*/
     .desktop{
         display: none;
     }
+    .column1{
+        width: 100%;
+        padding: 0px;
+    }
+    /*unsure about what width should be here*/
+    .column2{
+        width: 66%;
+        padding: 0px;
+    }
+    /* to be developed further. Goal is to have a menu that only appears on click
+    .navbar {
+        flex-direction: column;
+        float: right;
+        width: 26%;
+    }*/
+}
+@media only screen and (min-width: 801px){
+    .column1{
+        float: right;
+        width: 74%;
+        padding: 0px;
+    }
+    .column2 {
+        float: right;
+        width: 26%;
+        padding: 0px;
+    }
+}
+.row::after {
+    content: "";
+     clear: both;
+    display: table;
 }
 a{
     font-family: Helvetica;
@@ -125,10 +158,3 @@ p{
     font-family: Helvetica;
     margin-left: 40px;
 }
-/*The below is test code. I copied some of this from w3schools*/
-@media screen and (max-width: 600px) {
-    .navbar a {
-        flex-direction: column;
-    }
-}
-/*The above is test code*/
