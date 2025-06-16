@@ -142,6 +142,9 @@ img{
         padding: 0px;
     }
 }
+img.clear, h1.clear, h2.clear, h3.clear, h4.clear, h5.clear, h6.clear, p.clear, a.clear{
+    clear: both;
+}
 .row::after {
     content: "";
     clear: both;
