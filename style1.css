@@ -53,14 +53,20 @@ img{
     body{
         background-color: #202020;
     }
-    a:link, a:hover, a:visited, a:active,h1,h2,h3,h4,h5,h6,figcaption,p,.tab p, .tab a{
+    h1,h2,h3,h4,h5,h6,figcaption,p,.tab p, .tab a{
         color: white;
+    }
+    a:link, a:hover, a:visited, a:active{
+        color: #89c6e3
     }
     .darkmode{
         background-color: white;
     }  
-    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:active, .darkmode a:visited, .darkmode .tab a, .darkmode .tab p{
+    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p{
         color: black;
+    }
+    .darkmode a:hover, .darkmode a:link, .darkmode a:active, .darkmode a:visited, .darkmode .tab a, .darkmode .tab p{
+        color: #000099
     }
     .navbar .darkmode a, .navbar .darkmode a:link, .navbar .darkmode a:active, .navbar .darkmode a:visited{
         color: white;
@@ -76,12 +82,12 @@ img{
         background-color: white;
     }
     a:link, a:visited{
-        color: black;
+        color: #000099;
         background-color: transparent;
         text-decoration: underline;
     }
     a.hover{
-        color: black;
+        color: #000099;
         background-color: transparent;
         text-decoration: underline;
         font-weight: bold;
@@ -93,8 +99,11 @@ img{
         background-color: #202020;
         color:white;
     }
-    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p, .darkmode a:hover, .darkmode a:link, .darkmode a:visited, .darkmode .tab p, .darkmode .tab a{
+    .darkmode h1, .darkmode h2, .darkmode h3, .darkmode h4, .darkmode h5, .darkmode h6, .darkmode figcaption, .darkmode p{
         color: white;
+    }
+    .darkmode a:hover, .darkmode a:link, .darkmode a:visited, .darkmode .tab p, .darkmode .tab a{
+        color: #89c6e3
     }
     .navbar .darkmode a{
         color: white;
