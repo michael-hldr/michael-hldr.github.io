@@ -132,6 +132,26 @@ img{
         width: 66%;
         padding: 0px;
     }
+    .gallery1{
+        float: right;
+        width: 40%;
+        padding: 0px;
+    }
+    .gallery2{
+        float: right;
+        width: 40%;
+        padding: 0px;
+    }
+    .gallery3{
+        /*The below centres images on mobile*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /*The above centres images on mobile*/
+        float: none;
+        width: 66%;
+        padding: 0px;
+    }
     /* to be developed further. Goal is to have a menu that only appears on click
     .navbar {
         flex-direction: column;
@@ -148,6 +168,21 @@ img{
     .column2 {
         float: right;
         width: 26%;
+        padding: 0px;
+    }
+    .gallery1{
+        float: right;
+        width: 20%;
+        padding: 0px;
+    }
+    .gallery2{
+        float: right;
+        width: 30%;
+        padding: 0px;
+    }
+    .gallery3{
+        float: right;
+        width: 42%;
         padding: 0px;
     }
 }

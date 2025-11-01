@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a class="active" href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+
+<div class="main">
+    <h1>More</h1>
+    <p>
+        This section of the site is for any miscellanous information on the site.
+    </p>
+    <p>
+        If you would like to contact me, you can find my contact <a href="/contact">here</a>.
+    </p>
+    <!--<p>
+        My archive of construction photos at the University of Waterloo's Mathematics 4 building is 
+        <a href="./m4/">here</a>.
+    </p>-->
+
+    <p>
+        Last updated: 11/01/2025
+    </p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+
+</html>
