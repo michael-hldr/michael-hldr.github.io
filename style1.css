@@ -158,6 +158,11 @@ img{
         float: right;
         width: 26%;
     }*/
+    .r::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 }
 @media only screen and (min-width: 801px){
     .column1{
