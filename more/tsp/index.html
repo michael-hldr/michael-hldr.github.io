@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding Transit Signal Priority (TSP)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+</style>
+<body>
+<header> 
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+</header>
+<div class="main" style="padding-top: 30px">
+<h1>Understanding Transit Signal Priority (TSP)</h1>
+<p>
+    Following the poor reception of the recently-opened Line 6 Finch West, improved Transit Signal Priority (TSP) 
+    has been presented as a way to improve speeds on the line particularly given (as of Dec. 2025) Line 6 vehicles typically 
+    wait for left-turning cars before being given a green light. I appreciate the increased attention and hope it leads to 
+    speed improvements for all transit in the near future, but we must ensure we are doing it right. TSP is much more 
+    complicated than I have seen discussed over the past month. Luckily, I have looked into research on TSP as part of the 
+    University of Toronto Transportation Alumni Network 
+    <a href="https://www.linkedin.com/posts/university-of-toronto-transportation-alumni-network_uttan-is-proud-to-present-the-2025-student-activity-7373483259982430208-t3E3">
+        2025 Student Competition</a>
+    (along with my peers, see <a href=#Acknowledgements>#Acknowledgements</a>).
+</p>
+<a name="passive"></a>
+<a name="active"></a>
+<a name="passive-active"></a>
+<h2>"Passive" and "Active" TSP</h2>
+<p>
+    TSP encompasses any modifications to traffic signals that advantage transit over other modes. Thus, the most simple things 
+    can be counted as TSP. Passive TSP is anything that does not require vehicle detectors. This typically means timing the 
+    signals to give vehicles a green wave, though there are other strategies such as shortening other signal phases. 
+    Due to the nature of intersections a green wave may be difficult to achieve in both directions with existing infrastructure, 
+    and without vehicle detectors influencing the signals a slow zone or other issue could prevent any time savings. The 
+    slower signal timing may also slow car traffic even when a bus or train is nowhere near the intersection. As a 
+    result, active TSP is generally preferred.
+</p>
+<p>
+    Active TSP is any signal which may prioritize transit using vehicle detection. The signals may be able to shorten, lengthen, 
+    or skip a signal phase when a transit vehicle wants to go through the intersection. It may also reorder phases, insert a 
+    signal phase exclusively for transit vehicles, or a combination of these five to help transit vehicles get through the 
+    intersection faster. More advanced active TSP systems may also be able to decide when to give a transit vehicle priority. 
+    All implementations of TSP discussed on this page are some form of active TSP.
+</p>
+<a name="unconditional"></a>
+<h2>Unconditional TSP</h2>
+<p>
+    Most TSP in Toronto is unconditional. When a transit vehicle is approaching an intersection, the signal will do 
+    whatever priority measures it is allowed to do, assuming it is working properly. Over 400 intersections 
+    in the City of Toronto already have TSP, but it may not be noticeable as it usually is in the form of a green extension either before 
+    or after the pedeestrian countdown. If you've ever seen a Toronto bus get through an intersection after the pedestrian 
+    countdown, you might have witnessed TSP in action. See 
+    <a href="https://www.toronto.ca/legdocs/mmis/2023/ie/bgrd/backgroundfile-239881.pdf">a 2023 map</a>.
+</p>
+<p>
+    Toronto has been using signal priority since
+    <a href="https://www.toronto.ca/legdocs/mmis/2025/cc/bgrd/backgroundfile-254795.pdf">the mid-1990s</a>. 
+    At the time, there were technological barriers to implementing anything other than unconditional TSP. 
+    It is much easier to implement unconditional TSP as the only information the signal needs to process 
+    is whether a vehicle is present. This leads to the signals letting a vehicle through even when it is ahead of schedule. 
+    While this makes trips nominally faster, it also decreases reliability and increases bunching potentially increasing 
+    the amount of time journeys take through the increase in wait time. Due to this, I do not believe all TSP in Toronto 
+    should be unconditional. Instead, conditions need to be added.
+</p>
+<a name="conditional"></a>
+<h2>Conditional TSP</h2>
+<p>
+    Conditional TSP is exactly what it sounds like. The vehicle will now have to send the signal additional information which 
+    it will then use to determine whether it requires priority. If the vehicle is early, it might deny priority but it will 
+    not intentionally give it a red light (unless you program it to do so, perhaps this can be called "anti-priority"). 
+    Since any TSP with conditions counts as "Conditional TSP", it is a very broad category. You may even make some actions 
+    conditional while others are unconditional, for example extending a green light unconditionally but not allowing phase 
+    insertion unless the vehicle is not early.
+</p>
+ <p>
+    We can go further. Schedule adherence is not the only condition you can use. 
+    For more frequent routes, headway regularity may be a more important priority than schedule adherence. As a result, 
+    you may want to avoid giving full priority to vehicle if another already passed through the intersection two minutes ago. 
+    I do not expect Toronto to implement much conditional TSP in the near future apart from Metrolinx projects such as Lines 5 
+    and 6 (they do have TSP, though I do not know whether it has been working properly). This is due to the complications with 
+    upgrading the TTC's bus fleet to be able to provide signals with more information. I do not expect a political push for this 
+    either, as not many people understand the different types of TSP (hopefully this page will change some of that).
+</p>
+<a name="adaptive"></a>
+<h2>Adaptive TSP</h2>
+<p>
+    Adaptive TSP is the only type I don't quite fully understand. It's defined as giving solutions based on "real-time transit 
+    and traffic conditions", perhaps integrated with existing adaptive traffic signal systems. I imagine this as using some 
+    kind of optimization algorithm to determine the best course of action to improve transit's speed or reliability.
+    It is a much more recent technology which is not widely implemented in many cities. Thus, the exact use cases are 
+    not particularly clear at the moment. Most TSP systems around the world are conditional.
+</p>
+<a name="modifying-the-signal-cycle"></a>
+<h2>Modifying the Signal Cycle</h2>
+<p>
+    All active TSP systems modify signal phses in some way. The most simple forms of this involve modifying existing phases. 
+    As discussed above, green extensions are a common occurrence in Toronto. The green extensions come with a time limit, if a 
+    vehicle does not move through the intersection fast enough, the light will turn red anyway. This is to ensure opposing 
+    traffic can get a green light within a reasonable timeframe. The maximum green extension is typically some number of 
+    seconds, though I can not remember the exact number (20 seconds is around the order of magnitude for this). The other 
+    kind of phase modification is shortening your red light. This is limited by how far the system can detect a vehicle and how 
+    much time it has to give pedestrains to cross the street. If given enough distance, one could finish the pedestrian 
+    countdown early enough to avoid the red light. However, the further you might want to detect a vehicle the less reliable 
+    your predictions of when the vehicle will come will be.
+</p>
+<p>
+    The next most common modification is adding a transit-only phase. This is the most obvious form of TSP you can get. A 
+    common example is letting transit through before a left-turn phase. A small number of intersections along York Region's 
+    Viva Bus Rapid Transit (BRT) system do this conditionally at intersections with a longer left-turn phase 
+    (Keele/Hwy. 7 and Weston/Hwy. 7 come to mind). These can be implemented wherever in the cycle you want, but is most 
+    typically done just before the left-turn phase from the street the vehicle is running on (in most centre-running cases, 
+    this is the only sensible point for phase insertion).
+</p>
+<p>
+    Apart from those three, there are less common implementations. Reordering phases may allow you to get a green light 
+    immediately like with phase insertion, but also would allow drivers to go straight at the same time before a 
+    left-turn phase, which would occur after. You could also skip the left-turn phase altogether, though I would not recommend 
+    this if left turns are only allowed during the left-turn phase.
+</p>
+<a name="conflicts"></a>
+<h2>Conflicts</h2>
+<p>
+    As a hypothetical, let us assume that the Jane LRT proposal is built. It will intersect with Line 6 Finch West at-grade at 
+    Jane and Finch. Let's say the Jane LRT is at a red light and the Finch LRT is approaching the intersection at a green. 
+    Would you stop the Finch LRT and let the Jane LRT through with a phase insertion? Would your answer to that question 
+    change if you found out the Jane vehicle was late and the Finch vehicle was early? When two routes which are supposed to be 
+    given priority intersect, the question of how to implement TSP becomes much more complex. Originally, the TTC refused to 
+    touch these intersections. Nowadays, the priority given is first-come, first-serve. If red light truncation were enabled 
+    in this way at Jane and Finch, this may result in the Finch train being hit with a red light.
+</p>
+<p>
+    In this kind of situation, I would attempt to determine which train is worse off (whether due to a delay or headway issue), 
+    and prioritize appropriately (perhaps only truncating Line 6's green if that train is early and Jane's is late). 
+    Alternatively, I would let the Finch train through then immediately give a red, or 
+    simply provide two straight phase insertions for both trains. I personally do not know which option works better, and such 
+    a decision may depend on the circumstance. I think you can see now why TSP at major intersections is much more complex. 
+    Additionally, while in some cases you would want to prioritize a higher-ridership route, 
+    the buses along Finch West and Jane 
+    <a href="https://www.ttc.ca/transparency-and-accountability/Operating-Statistics/Operating-Statistics---2024/2024-Boardings">
+        had similar ridership in 2024</a>, so that would not be a factor at Jane and Finch.
+</p>
+<a name="frequency"></a>
+<a name="nearside"></a>
+<a name="farside"></a>
+<h2>Influences on TSP's Effectiveness</h2>
+<p>
+    TSP is only effective if you can make it work and there are external factors that impact whether it can succeed. 
+    Of these, stop location is perhaps the most obvious. When a vehicle stops, you do not know how long it will need 
+    at the stop. Even on a rapid transit line, the vehicle may hold due to a headway adjustment or disorderly passenger. 
+    Thus, failed priority requests (such as when a green extension runs out of time) are much more common when stops are 
+    placed nearside. When stops are placed farside, the stop will occur after the intersection improving the reliability of 
+    systems predicting when the vehicle will clear the intersection (including TSP systems).
+</p>
+<p>
+    Frequency is another factor influencing TSP effectiveness. If your line runs too frequently, the signal cycle may be too 
+    short to accomodate every TSP request and it may need to activate during every cycle. TSP's reliability begins to 
+    decline when frequencies improve beyond every 10 minutes, which would mean a vehicle enters the intersection an average of  
+    once every five minutes. If the line needs to carry more people than TSP can handle, perhaps a longer train or an 
+    elevated line may be a better solution.
+</p>
+<p>
+    Traffic can also play a role in TSP reliability for mixed-traffic systems, though this is irrelevant to Line 6.
+</p>
+<a name="speed"></a>
+<h2>TSP is Not the Only Problem With Line 6</h2>
+<p>
+    Line 6 has really low speed limits. I have been told that Line 6 vehicles are only allowed to travel through intersections 
+    at 25 km/h, and in street sections the speed limit may also be low. This is not an issue TSP can fix, but one that needs to 
+    be fixed by fixing other systems attached to Line 6 and by changing policy at the TTC to favour higher speeds, which would 
+    allow vehicles to travel as fast as the road's speed limit. I hope the City can fix this, as it may be an even bigger problem 
+    than the signals along Line 6.
+</p>
+<a name="takeaway"></a>
+<h2>The Takeaway</h2>
+<p>
+    <strong>Transit Signal Priority is not a silver bullet</strong>. It can not fix every problem your transit line has. 
+    If red lights are a major issue then better then TSP might help, but if the required level of service is too high it may 
+    not help as much or at all. Unconditional TSP sounds fast, but it might make bunching worse. Exactly what priority measures 
+    should be unconditional and which should be conditional should be discussed with potential bunching issues in mind. 
+    Additionally, if your transit line is slow between intersections it will need more than just better signals to get to the 
+    speeds riders expect. 
+</p>
+<a name="Acknowledgements"></a>
+<h2>Acknowledgements</h2>
+<p>
+    This page would not have been possible without the 2025 UTTAN Student Competition, my peers who worked on it (Lucas 
+    Gaspari and Thanusan Ragulan) alongside me, and our mentors (Joshua Wang of York Region and Tony Zhuang of Burlington 
+    Transit). Much of this page is taken from Wenxun Hu's 
+    <a href="https://tspace.library.utoronto.ca/bitstream/1807/125526/2/Hu_Wenxun_202211_PhD_thesis.pdf#page=28">
+        Literature Review
+    </a> on the subject done under the supervision of Prof. Amer Shalaby, who also helped us as an expert on TSP during the 
+    2025 Student Competition. Much of the information not in the Literature Review was taken from an August 2025 
+    meeting with Prof. Shalaby.
+</p>
+<p>
+    <br/><br/>
+    Last updated: 12/20/2025
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
