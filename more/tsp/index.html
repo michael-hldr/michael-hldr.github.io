@@ -41,7 +41,7 @@
 <a name="passive"></a>
 <a name="active"></a>
 <a name="passive-active"></a>
-<h2>"Passive" and "Active" TSP</h2>
+<h2>Passive and Active TSP</h2>
 <p>
     TSP encompasses any modifications to traffic signals that advantage transit over other modes. Thus, the most simple things 
     can be counted as TSP. Passive TSP is anything that does not require vehicle detectors. This typically means timing the 
@@ -57,6 +57,16 @@
     signal phase exclusively for transit vehicles, or a combination of these five to help transit vehicles get through the 
     intersection faster. More advanced active TSP systems may also be able to decide when to give a transit vehicle priority. 
     All implementations of TSP discussed on this page are some form of active TSP.
+</p>
+<a name="aggressive"></a>
+<h2>"Aggressive" TSP</h2>
+<p>
+    This is not actually a technical term I have seen in literature. When aggressiveness is referred to by public figures, 
+    it means the transit priority activates more often with the primary goal of making transit vehicles run faster. 
+    Aggressive TSP is not necessarily unconditional, but conditions would not be very restrictive. Other means of increasing 
+    aggressivess include granting the signals the ability to <a href="#modifying-the-signal-cycle">reorder signal phases</a>, 
+    increasing limits on <a href="unconditional">green extensions</a> and shortening red lights, and allowing 
+    <a href="#modifying-the-signal-cycle">phase insertion</a> at more points during the signal cycle.
 </p>
 <a name="unconditional"></a>
 <h2>Unconditional TSP</h2>
@@ -91,7 +101,7 @@
  <p>
     We can go further. Schedule adherence is not the only condition you can use. 
     For more frequent routes, headway regularity may be a more important priority than schedule adherence. As a result, 
-    you may want to avoid giving full priority to vehicle if another already passed through the intersection two minutes ago. 
+    you may want to avoid giving full priority to a vehicle if another already passed through the intersection two minutes ago. 
     I do not expect Toronto to implement much conditional TSP in the near future apart from Metrolinx projects such as Lines 5 
     and 6 (they do have TSP, though I do not know whether it has been working properly). This is due to the complications with 
     upgrading the TTC's bus fleet to be able to provide signals with more information. I do not expect a political push for this 
@@ -180,21 +190,26 @@
 <a name="speed"></a>
 <h2>TSP is Not the Only Problem With Line 6</h2>
 <p>
-    Line 6 has really low speed limits. I have been told that Line 6 vehicles are only allowed to travel through intersections 
-    at 25 km/h, and in street sections the speed limit may also be low. This is not an issue TSP can fix, but one that needs to 
-    be fixed by fixing other systems attached to Line 6 and by changing policy at the TTC to favour higher speeds, which would 
-    allow vehicles to travel as fast as the road's speed limit. I hope the City can fix this, as it may be an even bigger problem 
+    As of Dec. 2025, Line 6 has noticeably low speed limits. I have been told that Line 6 vehicles are only 
+    allowed to travel through intersections at 25 km/h, and some street-running sections also have low limits based on my 
+    initial rides. This is not an issue TSP can fix, but one that needs to be fixed by fixing other systems 
+    attached to Line 6 and by changing policy at the TTC to favour higher speeds, which would allow vehicles 
+    to travel as fast as the road's speed limit. I hope the City can fix this, as it may be an even bigger problem 
     than the signals along Line 6.
+</p>
+<p>
+    Shortly after this page's initial publication, I heard rumours that Line 6 has increased in speed since its opening. 
+    I intend on investigating this throughout late December 2025.
 </p>
 <a name="takeaway"></a>
 <h2>The Takeaway</h2>
 <p>
     <strong>Transit Signal Priority is not a silver bullet</strong>. It can not fix every problem your transit line has. 
-    If red lights are a major issue then better then TSP might help, but if the required level of service is too high it may 
+    If red lights are a major issue then better then TSP might help, but if the required service frequency is too high it may 
     not help as much or at all. Unconditional TSP sounds fast, but it might make bunching worse. Exactly what priority measures 
     should be unconditional and which should be conditional should be discussed with potential bunching issues in mind. 
-    Additionally, if your transit line is slow between intersections it will need more than just better signals to get to the 
-    speeds riders expect. 
+    Additionally, if your transit line is slow even with green lights it will need more than just better signals to get to the 
+    speeds riders expect.
 </p>
 <a name="Acknowledgements"></a>
 <h2>Acknowledgements</h2>
@@ -210,7 +225,7 @@
 </p>
 <p>
     <br/><br/>
-    Last updated: 12/20/2025
+    Last updated: 12/21/2025
 </p>
 </div>
 
