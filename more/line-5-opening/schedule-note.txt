@@ -1,0 +1,26 @@
+Line 5 Eglinton
+
+52 minutes end-to-end (both directions):
+9-10 min Mt Dennis to Cedarvale (4.3 km; 26-29 km/h)
+9 min Cedarvale to Yonge (3.1 km; 21 km/h)
+12-13 min Yonge to Don Mills (5.0 km; 23-25 km/h)
+21 min Don Mills to Kennedy (6.2 km; 18 km/h)
+
+
+Frequency:
+Early morn: Not entirely consistent due to trains being added (I observe some EB trips starting at Avenue)
+AM Peak 4'05"
+Midday 7'36"
+PM Peak 4'14"
+Early Eve 6'21"
+Late Eve 7'36"
+
+Sat Morning: 7'36"
+Sat Afternoon: 7'36"
+Sat Evening: 7'36"
+
+Sun Morning: 7'36"
+Sun Afternoon: 7'36"
+Sun Evening: 7'36"
+
+Last trains around 22:57 or 22:58
