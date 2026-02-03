@@ -10,7 +10,7 @@ Line 5 Eglinton
 
 Service frequency: 
 
-Early morning: Not entirely consistent due to trains being added (I observe some EB trips starting at Avenue)
+Early morning: Inconsistent. Longest headways found were 12 min. eastbound and 20 min. westbound.
 AM Peak: 4 min. 05 sec.
 Mid-day: 7 min. 36 sec.
 PM Peak: 4 min. 14 sec.
@@ -20,3 +20,5 @@ Late Evening: 7 min. 36 sec. (starting around 9:15 p.m. from Mount Dennis EB, af
 Weekends: All 7 min. 36 sec.
 
 Last trains around 10:57-58 p.m.
+
+The 20 min. service affects service starting between 5:40 (first trip) and 6:20, which arrive at Mount Dennis between 6:32 and 7:12.
