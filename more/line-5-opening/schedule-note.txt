@@ -7,7 +7,7 @@ Line 5 Eglinton
 12-13. min Yonge to Don Mills (5.0 km; 23-25 km/h)
 21 min. Don Mills to Kennedy (6.2 km; 18 km/h)
 
-Trips from Kennedy to Cedarvale, and from Kennedy to Mount Dennis are expected to take approximately as long as other transit options (with the Mount Dennis Option requiring use of GO and/or UP services). For other journeys, Line 5 is expected to be the best option.
+Trips from Kennedy to Cedarvale, and from Kennedy to Mount Dennis are expected to take approximately as long as other transit options (with the Mount Dennis Option requiring use of GO and/or UP services). For other journeys, Line 5 is expected to be the best option. All sections appear faster than Line 6 Finch West (scheduled at ~14 km/h upon opening).
 
 
 Service frequency: 
@@ -19,10 +19,10 @@ PM Peak: 4 min. 14 sec.
 Early Evening: 6 min. 21 sec.
 Late Evening: 7 min. 36 sec. (starting around 9:15 p.m. from Mount Dennis EB, after 10 p.m. WB)
 
-Weekends: All 7 min. 36 sec.
+Weekends: All 7 min. 36 sec., apart from the early morning issue mentioned above, which may impact trips for the first one to two hours of service.
 
 Last trains around 10:57-58 p.m.
 
-The 20 min. service affects service starting between 5:40 (first trip) and 6:20, which arrive at Mount Dennis between 6:32 and 7:12.
+The 20 min. service affects service starting between 5:40 (first trip) and 6:20, which arrive at Mount Dennis between 6:32 and 7:12. On Sundays, this is also the first few trips.
 The 34 Eglinton will run as a local alternative in the area. It will be significantly slower (typically taking over an hour for the route).
 The late evening shuttle bus will take 60-69 minutes according to the schedule, longer than the LRT.
