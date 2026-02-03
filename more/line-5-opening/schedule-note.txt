@@ -1,6 +1,7 @@
 Line 5 Eglinton
 
-52 minutes end-to-end (both directions):
+52 minutes end-to-end (both directions). The speeds below are averages, including layover time. Any train will spend time stopping which will naturally lower the speed. Actual train speeds will be higher.
+
 9-10 min Mt Dennis to Cedarvale (4.3 km; 26-29 km/h)
 9 min Cedarvale to Yonge (3.1 km; 21 km/h)
 12-13 min Yonge to Don Mills (5.0 km; 23-25 km/h)
@@ -13,7 +14,7 @@ AM Peak 4'05"
 Midday 7'36"
 PM Peak 4'14"
 Early Eve 6'21"
-Late Eve 7'36"
+Late Eve 7'36" (starting around 9 p.m.)
 
 Sat Morning: 7'36"
 Sat Afternoon: 7'36"
