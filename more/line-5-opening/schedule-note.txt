@@ -1,5 +1,7 @@
 Line 5 Eglinton
 
+NOTE: A previous version of this page over-estimated the time taken by the shuttle bus. It is 53-58 min., rather than 60-69 min.
+
 52 minutes end-to-end (both directions). The speeds below are averages, including layover time. Any train will spend time stopping which will naturally lower the speed. Actual train speeds will be higher.
 
 9-10 min. Mt Dennis to Cedarvale (4.3 km; 26-29 km/h)
@@ -25,4 +27,4 @@ Last trains around 10:57-58 p.m.
 
 The 20 min. service affects service starting between 5:40 (first trip) and 6:20, which arrive at Mount Dennis between 6:32 and 7:12. On Sundays, this is also the first few trips.
 The 34 Eglinton will run as a local alternative in the area. It will be significantly slower (typically taking over an hour for the route).
-The late evening shuttle bus will take 60-69 minutes according to the schedule, longer than the LRT.
+The late evening shuttle bus will take 53-58 minutes according to the schedule, slightly slower than the LRT.
