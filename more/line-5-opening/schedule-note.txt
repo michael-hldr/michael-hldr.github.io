@@ -1,6 +1,6 @@
 Line 5 Eglinton
 
-NOTE: A previous version of this page over-estimated the time taken by the shuttle bus. It is 53-58 min., rather than 60-69 min.
+NOTE: A previous version of this page over-estimated the time taken by the shuttle bus. It is 53-58 min., rather than 60-69 min. I also neglected to include the Holiday service, which is different from Sunday service.
 
 52 minutes end-to-end (both directions). The speeds below are averages, including layover time. Any train will spend time stopping which will naturally lower the speed. Actual train speeds will be higher.
 
@@ -19,9 +19,15 @@ AM Peak: 4 min. 05 sec.
 Mid-day: 7 min. 36 sec.
 PM Peak: 4 min. 14 sec.
 Early Evening: 6 min. 21 sec.
-Late Evening: 7 min. 36 sec. (starting around 9:15 p.m. from Mount Dennis EB, after 10 p.m. WB)
+Late Evening: 7 min. 36 sec. (starting around 9:15 p.m. from Mount Dennis EB, after 10 p.m. WB. Last couple trips may have slightly longer gaps.)
 
 Weekends: All 7 min. 36 sec., apart from the early morning issue mentioned above, which may impact trips for the first one to two hours of service.
+
+Holidays:
+Early morning: Inconsistent. WB service will be around 21 1/2 minutes for the first four trips. EB service will be every 10 minutes or better.
+Morning: 9 min. 30 sec.
+Afternoon: 7 min. 36 sec.
+Early Evening: 12 min. 40 sec.
 
 Last trains around 10:57-58 p.m.
 
