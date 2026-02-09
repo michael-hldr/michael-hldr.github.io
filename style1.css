@@ -132,6 +132,16 @@ img{
         width: 66%;
         padding: 0px;
     }
+    .column3{
+        /*The below centres images on mobile*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /*The above centres images on mobile*/
+        float: none;
+        width: 50%;
+        padding: 0px;
+    }
     .gallery1{
         float: left;
         width: 35%;
@@ -173,6 +183,11 @@ img{
     .column2 {
         float: right;
         width: 26%;
+        padding: 0px;
+    }
+    .column3{
+        float: right;
+        width: 20%;
         padding: 0px;
     }
     .gallery1{
