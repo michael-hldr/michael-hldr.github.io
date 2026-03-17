@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Which Route is Best?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style1.css">
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+<div class="main">
+<h1>Which Route is Best?</h1>
+<h4>
+    This is not an official study, it is entirely <a href="../independent-study.html">independent</a>.
+</h4>
+<p>
+    The industrial park (known as Vaughan Business Park) north and east of Vaughan Metropolitan Centre 
+    station is (from what I have seen) a strong generator of bus ridership in the area. As part of their 
+    <a href="https://online.flippingbook.com/view/1000105453/60/">2026 Annual Transit Plan</a>, 
+    York Region Transit (YRT) is proposing a routing change in the area. As part of the change, 
+    a new weekday daytime service will be introduced between Vaughan Mills Mall and 
+    Vaughan Metropolitan Centre Station via Creditstone Road, supplementing the existing peak-only Edgeley 
+    and full-service Jane routes. Is this the best plan for the area. To find out, I am working on both 
+    macroscopic and microscopic models of potential riders in the business park.
+</p>
+<p>
+    I do not expect this to be ready until the end of April due to my busy schedule this semester.
+</p>
+<h2>Area and Scope</h2>
+<p>
+    The study area is shown below, comprising the areas of the Vaughan Business Park 
+    south of Vaughan Mills Mall. The macroscopic model used assumes all employees closest to the existing 
+    frequent route on Jane Street will use it, while every other potential rider will use it if the 
+    perceived time to Vaughan Metropolitan Centre is shortest, as based on 
+    <a href="https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/About-the-TTC/Projects-Landing-Page/Transit-Planning/Service-Standards_May-2024.pdf?rev=6c96a85cc0a64147ad424f949dabce64">
+        the TTC's service standard
+    </a>. The microscopic model will attempt to model individual behaviour and is currently under development. 
+    Both models are being written in C++.
+</p>
+<iframe src="https://www.google.com/maps/d/embed?mid=1BlIQCYmriDd1cNNlhOKswyL0_Vln1ow&ehbc=2E312F&noprof=1" width="80%" height="480"></iframe>
+<p>
+    <br/><br/><br/>
+    Last updated: 03/16/2026
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
