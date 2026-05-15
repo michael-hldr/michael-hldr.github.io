@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Which Route is Best?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style1.css">
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+<div class="main">
+<h1>Macro Model Documentation</h1>
+<p>
+    I don't normally publish code, so this page is likely done differently than a typical documentation page. 
+    If you would like to try the code yourself, you can find it <a href="./macroscopic.cpp">here</a>. 
+    <strong>Ensure you can run C++ code before downloading!</strong> If you 
+    want to suggest improvements to the code, please <a href="/contact/">contact me</a>.
+</p>
+<p>
+    I will start working on a more user-friendly way of using the code after this page is published.
+</p>
+<h2>Assumptions</h2>
+<p>
+    -Route 2 (the middle route) will always exist and be more frequent than the surrounding routes, to the point 
+    that all riders closest to it will prefer to take route 2 in all cases (this is presently true about the 
+    real-life 20 - Jane).<br/>
+    -All bus route coverage zones are rectangles and routes are parallel to each other in the study area.<br/>
+    -Perceived convenience is the only consideration when one is choosing a route.<br/>
+    -Users can walk in any way they choose to get to a bus route conveniently, and bus routes can be 
+    boarded from anywhere in the rectangle. To correct this one, you may increase all walking distances.<br/>
+    -No one will choose driving over transit if it is more convenient.
+</p>
+<h2>Inputs</h2>
+<p>
+    The first line of input contains integers <i>n</i> and <i>m</i>.
+    <i>n</i> is the number of routes. For this program, <i>n</i> is always 3. I would like to improve this to 
+    allow for <i>n</i> = 2 in the near future.<br/>
+    <i>m</i> is the total number of buses allotted. They will be distributed among the <i>n</i> routes.
+</p>
+<p>
+    The second line contains the minf[<i>i</i>] (minimum frequency) value for each route <i>i</i>, in minutes. 
+    If not enough buses are allotted for all of the minimum frequencies to be met, 
+    the program will output an error message.<br/>
+</p>
+<p>
+    The third line contains the walking standances between each of the routes. The inputs are in metres, then 
+    multiplied by 0.022 to get the percieved time spent in minutes, according to 
+    <a href="https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/About-the-TTC/Projects-Landing-Page/Transit-Planning/Service-Standards_May-2024.pdf?rev=6c96a85cc0a64147ad424f949dabce64#page=23">
+        the TTC
+    </a>.
+</p>
+<p>
+    The fourth line contains prop[<i>i</i>], the proportion of riders nearest to each route. The routes are 
+    assumed perfectly parallel and the areas perfectly rectangular in this scenario. The land use is assumed 
+    to have the same density of potential riders throughout. Put together, we assume the proportion of riders is 
+    roughly the same as the area and walking distances can be derived from the ideal parallel rectangles.
+</p>
+<p>
+    The fifth line contains the average walking distance wd[<i>i</i>] between route <i>i</i> and the median 
+    location on route <i>i</i>, for all three routes.
+</p>
+<p>
+    The sixth line contains the amount of time (in minutes) each route takes for the average individual. Total time 
+    through the study area divided by 2 may be a good approximation for this. If all take the same amount of time, 
+    setting all three as 0 is valid and the code will work normally.
+</p>
+<p>
+    The seventh and final line contains the round trip time ("R.T.T.") of each route, including minimum layover time. 
+    This number is used to calculate headways from the number of buses given. The maximum round-trip time during a 
+    given time period should be used here.
+</p>
+<h2>Outputs</h2>
+<p>
+    The output will be three lines, each describing the number of buses on and the headway of each route. 
+    If a route does not run, it will be noted in the output.
+</p>
+<p>
+    
+</p>
+<p>
+    <br/><br/><br/>
+    Last updated: 05/15/2026
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>

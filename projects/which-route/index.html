@@ -34,9 +34,6 @@
     and full-service Jane routes. Is this the best plan for the area. To find out, I am working on both 
     macroscopic and microscopic models of potential riders in the business park.
 </p>
-<p>
-    I do not expect this to be ready until the end of April due to my busy schedule this semester.
-</p>
 <h2>Area and Scope</h2>
 <p>
     The study area is shown below, comprising the areas of the Vaughan Business Park 
@@ -49,9 +46,48 @@
     Both models are being written in C++.
 </p>
 <iframe src="https://www.google.com/maps/d/embed?mid=1BlIQCYmriDd1cNNlhOKswyL0_Vln1ow&ehbc=2E312F&noprof=1" width="80%" height="480"></iframe>
+
+<h2>Macroscopic Model</h2>
+<p>
+    Further description of the model can be found <a href="./macro-doc.html">here</a>.
+</p>
+<p>
+    This model was built with a number of assumptions to simplify the situation, allowing it to be run on the fly and 
+    test many different cases. I treated this code like the solution to a programming problem, the type 
+    often seen in programming competitions 
+    (<a href="https://codeforces.com/contest/2227/problem/D">unrelated example problem</a>).
+</p>
+<p>
+    The model assumes three possible routes. The 2nd (middle) route already exists (meant to model route 20 - Jane) 
+    and will be kept. The routes to the left and right may not exist and the model may decide those routes should 
+    not exist (meant to model the proposed routes of 29 - Edgeley and 26 - Maple through the study area).
+</p>
+<p>
+    In a theoretical case, with routes spaced 1000 metres from each other and no extra distance walking to bus stops 
+    is needed (apart from horizontal distance), the parallel route 1000 metres away becomes necessary around when there 
+    are enough buses to run it around every 11 minutes, at which point the most efficient bus allocation is running 
+    both routes every 20 to 21 minutes. At the point when having only one route is no longer the most efficient 
+    option, having a less frequent secondary route is always better as long as it runs at least around every 
+    half hour.
+</p>
+<p>
+    With a shorter distance, the headway would need to be shorter to justify this. With a longer distance, the 
+    headway can be longer. The distance and number of buses required appear to be roughly 
+    but probably not exactly proportional to each other. However, at longer distances (e.g. 2000 metres) people 
+    may not choose transit. I am unsure of how to work such a situation into my model and would advise avoiding 
+    looking at distances longer than around 1,500 metres.
+</p>
+<p>
+    The Edgeley route is around 700 metres away from Jane, while Creditstone is around 550 metres away. However, 
+    Edgeley has a larger catchment area due to the railway terminal east of Creditstone Road. Both the routes 
+    on Creditstone and Edgeley are too infrequent to be the most efficient option, though there is likely an 
+    additional 200-400 metre walk to any bus stop. The two less-frequent routes certainly come less frequently than 
+    they would under an "efficient" option. However, route 20 - Jane is already well above the 20-minute service level 
+    so the total number of buses would likely merit the more minor routes.
+</p>
 <p>
     <br/><br/><br/>
-    Last updated: 03/16/2026
+    Last updated: 05/15/2026
 </p>
 </div>
 
