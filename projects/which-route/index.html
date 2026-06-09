@@ -34,9 +34,9 @@
     York Region Transit (YRT) is proposing a routing change in the area. As part of the change, 
     a new weekday daytime service will be introduced between Vaughan Mills Mall and 
     Vaughan Metropolitan Centre Station via Creditstone Road, supplementing the existing peak-only Edgeley 
-    and full-service Jane routes. Is this the best plan for the area. To find out, I am working on both 
-    macroscopic and microscopic models of potential riders in the business park.
+    and full-service Jane routes. Is this the best plan for the area?
 </p>
+<p>Probably not.</p>
 <h2>Area and Scope</h2>
 <p>
     The study area is shown below, comprising the areas of the Vaughan Business Park 
@@ -88,9 +88,40 @@
     they would under an "efficient" option. However, route 20 - Jane is already well above the 20-minute service level 
     so the total number of buses would likely merit the more minor routes.
 </p>
+<a name="finer"></a>
+<h2>A finer model</h2>
+<p>
+    This model simulates individual decisions on which route to take (bus routes and walking) for a random sample 
+    of passengers and outputs the ridership for bus routes going through the area. This model relies on an assumption 
+    that with similar land use throughout the study area, the area of each building is relative to employee density. 
+    Buildings with 3 more more storeys get a multiplier smaller than their number of floors (as these tend to be 
+    office buildings where people are probably more likely to drive). If you would like to see the areas and 
+    distances used for this, see 
+    <a href="https://www.google.com/maps/d/edit?mid=1Qi3StvEBA26VlWRnGfDNGkrL6VjBiAg&usp=sharing">
+        this map
+    </a>. Additionally, it assumed the same percieved walking and waiting times assumed by the TTC and in my 
+    earlier macroscopic model.
+</p>
+<p>
+    You can find the code I have used to run the model 
+    <a href="./micro.cpp">here</a>. Expect further information about the model in mid-June.
+    The model is based on areas and distances determined by the map, existing schedules on the YRT routes in 
+    the area, and various speed assumptions for the new route on Creditstone ranging from 17 to 30 km/h (and 
+    one 50 km/h case made mostly as a joke). All cases tested used a sample size of 20,000 to ensure the margin of 
+    error would be very small.
+</p>
+<p>
+    The results indicate a route along Creditstone would get very little ridership. Even if the route ran at 50 km/h, 
+    ridership is expected (by my model) to be a third of the ridership on Edgeley. During midday hours, running 
+    a route on Creditstone instead of Edgeley would (according to my model) decrease ridership in the area by around 
+    5% and increase ridership on the busy 20 - Jane bus by over 10%. Interestingly, improving the 20 - Jane 
+    would be more effective for the area than a new Creditstone midday service, but not as effective as a new 
+    Edgeley service.
+</p>
+<p>More to come.</p>
 <p>
     <br/><br/><br/>
-    Last updated: 05/15/2026
+    Last updated: 06/09/2026
 </p>
 </div>
 
