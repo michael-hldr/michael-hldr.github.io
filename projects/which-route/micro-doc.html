@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+</style>
+<body>
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+<div class="main">
+<h1>A Finer Model: Documentation</h1>
+<p>
+    I don't normally publish code, so this page is likely done differently than a typical documentation page. 
+    If you would like to try the code yourself, you can find it <a href="./micro.cpp">here</a>. 
+    <strong>Ensure you can run C++ code before downloading!</strong> If you 
+    want to suggest improvements to the code, please <a href="/contact/">contact me</a>.
+</p>
+<p>
+    This code is essentially a modified Dijkstra's implementation. This documentation is written assuming 
+    the reader does not know Dijkstra's (I didn't either). It will run a sample of \(N\) pseudorandomly-chosen 
+    individuals who choose their route based on how quickly they can get between Point 0 and their origin point, 
+    using perceived values which multiply the time spent walking or waiting for transit. These multipliers 
+    are taken from 
+    <a href="https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/About-the-TTC/Projects-Landing-Page/Transit-Planning/Service-Standards_May-2024.pdf?rev=6c96a85cc0a64147ad424f949dabce64">
+        the TTC's service standards
+    </a>.
+</p>
+<h2>Assumptions</h2>
+<p>
+    -All building area is weighted the same (multipliers may apply for taller buildings).<br/>
+    -Demand for transit from employees is equally likely to 
+    come from any employment space ("weighting") in the study area.<br/>
+    -Users can only choose between taking a single transit route and walking.<br/>
+    -No one will choose driving over transit if it is more convenient.
+</p>
+<h2>Inputs</h2>
+<p>
+    The first line of input contains integers \(R\), \(P\), and \(N\):
+    \(R\) is the number of routes in the study area. I have capped the number of routes at 5, you may 
+    increase it by downloading and editing the code but I can not be certain the code will run fast enough if you do.<br/>
+    \(P\) is the number of points the model considers. Each route will go between these points 
+    and all points will be assigned a weighting based on the nearby floor area devoted to employment (roughly). 
+    The number of points is capped at 299 in this code. You may download and edit the code to add more, but I do 
+    not know if it will run fast enough for it.<br/>
+    \(N\) is the sample size, the number of passengers this program will simulate. There is no limit to this number 
+    though my preferred \(N\) of 20,000 is already a very large sample size.
+</p>
+<p>
+    The next line of input contains the \(proportion\) array, the weightings of each of the \(P\) points. For the 
+    purpose of this project, these come from the total area of nearby buildings. 3+ storey buildings have been given 
+    a multiplier equal to less than the number of floors, as offices tend to be more affluent and more likely 
+    to drive.
+</p>
+<p>
+    Next, the information for each route is inputted. The first line for each route contains three variables:
+</p>
+<p>
+    -\(freq[i]\), the frequency of route \(i\). The randomly generated workers will have their wait time for 
+    route \(i\) randomly generated to be a number between \(0\) and \(freq[i]\).<br/>
+    -\(routeP\), the number of points besides the first point which the route serves.<br/>
+    -The initial \(lastPoint\) value, which is the first point on the route (this should be set to \(0\)).
+</p>
+<p>
+    The next \(routeP\) lines contain four variables about each segment of the route:
+</p>
+<p>
+    -(\speed1\) and (\speed2\), the speed in the forward and reverse directions. This program presently only 
+    analyzes the forwards direction so I normally set (\speed1\) and (\speed2\) to be the same.<br/>
+    -(\D\), the distance, in metres, between the last point and the new point.
+    -\(thisPoint\), the new point on the route.
+</p>
+<p>
+    After all route information is inputted, the next line you input will have one variable: \(links\), the total 
+    number of walking links. The next \(links\) lines have three inputs: \(D\) (distance), \(lastPoint\), and 
+    \(thisPoint\) (the last two are self-explanatory).
+</p>
+<p>
+    The model used for this project has around 150 points and 180 links. You do not really need to get every building 
+    in detail, that would require nearly 500 points and will not run as fast.
+</p>
+</p>
+<h2>Outputs</h2>
+<p>
+    The program will output the following to the console:
+</p>
+<p>
+    "WALKED: \(a\)", where \(a\) is the number of people who walked.
+</p>
+<p>
+    The \(i\)th of the next \(n\) lines will have "Route \(i\): \(b\)", where \(b\) is the number of people 
+    riding route \(i\) solely within the study area. This program does not simulate the continuation of 
+    routes beyond the study area.
+</p>
+<p>
+    The final line will output "TOTAL TRAVEL TIME: \(c\)", where \(c\) is the total percieved travel time, 
+    measured in person-minutes with the aforementioned multipliers applied. 
+</p>
+<p>
+    I have included a sample case with a very simple scenario intended to help you understand the code:
+    <a href="./microsamplein.txt">Sample input</a>, <a href="./microsampleout.txt">Sample output</a>.
+</p>
+<p>
+    <br/><br/><br/>
+    Last updated: 06/11/2026
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
