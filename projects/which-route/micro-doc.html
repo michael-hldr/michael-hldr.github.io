@@ -114,6 +114,23 @@
     I have included a sample case with a very simple scenario intended to help you understand the code:
     <a href="./microsamplein.txt">Sample input</a>, <a href="./microsampleout.txt">Sample output</a>.
 </p>
+<h2>How it runs</h2>
+<p>
+    Upon getting all of its walking points, the code runs a Dijkstra's algorithm only on the walking routes, originating 
+    from Point \(0\). This determines the maximum times you would need to get to each point. After, it repeats this 
+    but with one of the transit routes operating. All travel time values are stored.
+</p>
+<p>
+    When each random traveller 
+    is generated, the code picks a number between 1 and the sum of the weightings, and uses that number to determine 
+    where the traveller is. It additionally randomizes how long the traveller will have to wait for each bus route 
+    and adds it to the total travel time for each route. The traveller picks the route (including route \(0\) - 
+    Walking) with the lowest value. This repeats for each traveller until all \(N\) travellers have been simulated.
+</p>
+<p>
+    The code counts how many travellers take each route and the total length of time they take, which is used 
+    for the outputs once the program is finished running.
+</p>
 <p>
     <br/><br/><br/>
     Last updated: 06/11/2026
