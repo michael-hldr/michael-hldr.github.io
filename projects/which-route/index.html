@@ -121,7 +121,6 @@
     would be more effective at saving area commuters' time than a new Creditstone midday service, 
     but not as effective as a new Edgeley service.
 </p>
-<p>More to come.</p>
 <div class="column2">
     <figure>
         <img src="./distances.png" alt="Creditstone Road is 550 metres away from Jane and 300 metres away from the 
@@ -148,8 +147,14 @@
 <h3>Jane BRT</h3>
 <p>
     Within the study area, the <a href="https://www.yrrtc.ca/jane_brt">Jane BRT</a> study is ongoing. My 
-    model can ntt account for the impacts of stop spacing on speed 
-    (one thing which could potentially be an issue). The project team is using an 
+    model can not account for the impacts of stop spacing on speed 
+    (one thing which could potentially be an issue). To preclude this, I tried multiple different speeds ranging 
+    from 15 to 35 km/h, along with frequencies ranging from 6 to 15 or 8 to 20 minutes. Additionally, I am assuming 
+    20 - Jane will have its frequency reduced to 20 or 30 minutes when the BRT is implemented. I do not believe it 
+    will be less frequent due to the employment areas it goes through having a large amount of local demand.
+</p>
+<p>    
+    The project team is using an 
     assumption of 30 km/h for the BRT. I am mildly skeptical of this assumption given other Viva lines are 
     not scheduled this fast, and on corridors like this one I would expect all stops to generate ridership 
     during peak hours due to employment demand (while other intersections would generate demand for the local 
@@ -171,21 +176,20 @@
     Rutherford rather than south of it.
 </p>
 <p>
-    I can, however, test different scenarios to determine how differences in speed impact the improvements 
-    brought by the BRT. To do this, I will need to test a few different speeds (e.g. 20, 25, 30), as well as 
-    some different frequencies for 20 - Jane (whose service would likely be reduced). I think a scenario closer to 
-    77 - Highway 7 (15-20 minutes at peak) is most likely given what kind of areas 20 - Jane runs in, though 
-    I will test lower frequencies as well.
-</p>
-<p>
     Since the walk from the Jane BRT's Highway 7 station is expected to be outside (rather than in a tunnel like 
-    at SmartVMC Terminal), I applied the bus travel time to the nearest subway station entrance (Assuming a 25 km/h 
-    speed) as a penalty.
+    at SmartVMC Terminal), I applied the bus travel time to the nearest subway station entrance as a penalty.
 </p>
-<h4></h4>
 <p>
-    While a member of the project team (who is familiar with my work) approached me about doing this, this was done 
-    out of the team member's own volition and my work will have no impact on this project.
+    To succeed within the study area, the Jane BRT will need to run at least every 10 minutes 
+    during the morning rush hour and every 12 minutes otherwise. It will additionally need to not run as slowly 
+    as the Finch West LRT (~15 km/h), instead at least 20 km/h. I strongly believe both criteria will be met. My 
+    analysis of the model results with the Jane BRT can be found in <a href="./jane-brt-cases.pdf">this document</a>.
+</p>
+<p>
+    I expect the Jane BRT to have frequent service at times during which route 320 - Jane Express currently 
+    operates due to the high amount of resources (buses) already used on Jane Street during those hours (two 
+    routes each running at least every 17 minutes). After approximately 10:30 p.m., 
+    service levels may sharply drop as 320 stops operating around that time and 20's service drops significantly.
 </p>
 <h2>Preliminary Recommendation</h2>
 <p>
