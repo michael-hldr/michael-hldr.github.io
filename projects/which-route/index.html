@@ -37,6 +37,79 @@
     and full-service Jane routes. Is this the best plan for the area?
 </p>
 <p>Probably not.</p>
+
+<h2>Draft Recommended Solution</h2>
+<p>
+    Within the study area (south of Vaughan Mills Terminal and east of Highway 400), the only needed routing change 
+    is for Route 26 - Maple to continue running on Edgeley in addition to Route 29 - Edgeley. In addition, Route 
+    29 should be renamed to avoid confusion and both routes should run on a blended schedule to allow for 20- to 
+    21-minute service during rush hours. Routings north of Vaughan Mills are out of this study's scope.
+</p>
+<iframe src="https://www.google.com/maps/d/embed?mid=1U4HVKD9gJ8gRvwu4GorNhstdfih3ti8&ehbc=2E312F" width="80%" height="480"></iframe>
+<p>
+    This recommendation was decided based on the lack of ridership potential along Creditstone Road, primarily 
+    due to it being 500 metres from Jane Street and being the last road before CN's Vaughan Rail yard, preventing 
+    any additional accessible areas east of Creditstone Road. Edgeley, by contrast, is further from Jane and usually 
+    has a road further west before Highway 400, increasing the walkshed in both directions. Simulations both at 
+    the macroscopic level and those simulating individual riders found ridership was universally higher and travel 
+    times lower when Route 26 - Maple was routed on Edgeley (whether or not schedules were blended), with blended 
+    schedules improving conditions even further. Additionally, the higher ridership potential gives midday service 
+    on Edgeley Boulevard much more potential than on Creditstone Road.
+</p>
+<p>
+    Since Edgeley Boulevard is west of Jane Street and Route 26 - Maple will continue to use Vaughan Mills Terminal 
+    when it runs on Creditstone (unlike in the original proposal), Edgeley will be no slower for riders north of 
+    Rutherford than Creditstone, so there should be no negative impacts on ridership north of Vaughan Mills 
+    (except for the potential 1 or 2 minutes' additional headway resulting from a blended schedule). 26 - Maple 
+    additionally appeared to be a great route for midday service due to its connection to Maple 
+    GO Station, which the other rush-hour routes in the study area do not have..
+</p>
+<p>
+    More details on the macroscopic model can be found <a href="#macro">below</a>. More details on the individual 
+    simulation model, the main one used for this study, can be found <a href="#finer">below</a> as well. For 
+    more information on how the finer model was used to come to this conclusion, see 
+    <a href="./test-cases.pdf">the test cases document</a>.
+</p>
+<a name="jane-brt"></a>
+<h3>Jane BRT</h3>
+<p>
+    The <a href="https://www.yrrtc.ca/jane_brt">Jane BRT</a>, a project to replace Route 320 - Jane Express 
+    with a Bus Rapid Transit line running through the study area along Jane Street, was undergoing public
+    consultations while much of the scenarios were being run on the finer model. A project team member somewhat
+    familiar with my work requested I include the Jane BRT in this project.
+</p>
+<p>
+    To avoid assuming speeds (the project team assumes 30 km/h, compared to the 24-29 km/h of 320 - Jane 
+    Express) and frequencies, I included cases with a wide range of headways (6-15 min. during peak hours, 8-20 min. 
+    during miday hours) and speeds (15-35 km/h) which I felt were realistic. The study area has much faster 
+    speeds for Routes 20 and 320 compared to outside it, so the benefits of the BRT will likely be larger for those 
+    immediately north of the study area. 
+</p>
+<p>
+    Additionally, I am assuming Route 20 - Jane will have its frequency reduced to 20 or 30 minutes 
+    when the BRT is implemented. I do not believe it 
+    will be less frequent due to the employment areas it goes through having a large amount of local demand.
+</p>
+<p>
+    Since the walk from the Jane BRT's Highway 7 station is expected to be outside (rather than in a tunnel like 
+    at SmartVMC Terminal), I applied the bus travel time to the nearest subway station entrance as a penalty.
+</p>
+<p>
+    Based on <a href="./jane-brt-cases.pdf">the results</a> of the Jane BRT scenarios, the Jane BRT will need to 
+    be both fast (not Finch LRT speed) and very frequent (at least 10 or 12 minute depending on the hour) 
+    to succeed, with frequency being most important factor. Due to current 
+    bus allocations on Jane Street (two routes running at least every 17 minutes until past 10pm), 
+    it should be very easy to get a highly frequent BRT on Jane without adding 
+    additional resources to the corridor.
+</p>
+<p>
+    With the Jane BRT included, the positive impact of running more service on Edgeley becomes even more clear, 
+    along with the necessity of fast, frequent service on the Jane BRT. 
+    The Jane BRT will most likely improve outcomes 
+    within the study area, and due to the slower nature of Route 20 north of there it will be even more 
+    beneficial further north. Whether a branch should run to Teston Road (a likely suggestion to avoid a transfer) 
+    is out of this study's scope, but it should be studied.
+</p>
 <h2>Area and Scope</h2>
 <p>
     The study area is shown below, comprising the areas of the Vaughan Business Park 
@@ -50,6 +123,7 @@
 </p>
 <iframe src="https://www.google.com/maps/d/embed?mid=1BlIQCYmriDd1cNNlhOKswyL0_Vln1ow&ehbc=2E312F&noprof=1" width="80%" height="480"></iframe>
 
+<a name="macro"></a>
 <h2>Macroscopic Model</h2>
 <p>
     Further description of the model can be found <a href="./macro-doc.html">here</a>.
@@ -143,83 +217,7 @@
     This applied to Credistone means that there are fewer places where stops would fit causing 
     longer walks to a Creditstone route, one which is already just over 500 metres away from Jane Street.
 </p>
-<a name="jane-brt"></a>
-<h2>Including the Jane BRT</h2>
-<p>
-    Within the study area, the <a href="https://www.yrrtc.ca/jane_brt">Jane BRT</a> study is ongoing. My 
-    model can not account for the impacts of stop spacing on speed 
-    (one thing which could potentially be an issue). To preclude this, I tried multiple different speeds ranging 
-    from 15 to 35 km/h, along with frequencies ranging from 6 to 15 or 8 to 20 minutes. Additionally, I am assuming 
-    20 - Jane will have its frequency reduced to 20 or 30 minutes when the BRT is implemented. I do not believe it 
-    will be less frequent due to the employment areas it goes through having a large amount of local demand.
-</p>
-<p>    
-    The project team is using an 
-    assumption of 30 km/h for the BRT. I am mildly skeptical of this assumption given other Viva lines are 
-    not scheduled this fast, and on corridors like this one I would expect all stops to generate ridership 
-    during peak hours due to employment demand (while other intersections would generate demand for the local 
-    20 - Jane). However, the existing 320 - Jane Express service is running through the 
-    study area much faster than one would expect:
-</p>
-<p>
-    AM rush: 26 km/h NB, 29 km/h SB<br/>
-    PM rush: 24 km/h (both directions)
-</p>
-<p>
-    The above speeds include all turns, such as those into bus terminals which will be avoided by the BRT. 
-    This will likely result in higher speeds, potentially offsetting the effect of shorter stop spacing. 
-    A member of the project team additionally informed me that York Region would like to implement better 
-    signal priority to prevent low speeds such as those seen on Line 6 Finch West (which was specifically 
-    mentioned).
-    These speeds reduce significantly immediately north of the 
-    study area particularly during the PM rush, so the Jane BRT will have much greater benefits north of 
-    Rutherford rather than south of it. These benefits may be reduced north of Major Mackenzie due to a needed 
-    transfer (and to avoid that a branch to Teston may merit consideration), but I do not believe that will get 
-    in the way of the likely benefits of the BRT.
-</p>
-<p>
-    Since the walk from the Jane BRT's Highway 7 station is expected to be outside (rather than in a tunnel like 
-    at SmartVMC Terminal), I applied the bus travel time to the nearest subway station entrance as a penalty.
-</p>
-<p>
-    To succeed within the study area, the Jane BRT will need to run at least every 10 minutes 
-    during the morning rush hour and every 12 minutes otherwise. It will additionally need to not run as slowly 
-    as the Finch West LRT (~15 km/h), instead at least 20 km/h. I strongly believe both criteria will be met. My 
-    analysis of the model results with the Jane BRT can be found in <a href="./jane-brt-cases.pdf">this document</a>.
-</p>
-<p>
-    I expect the Jane BRT to have frequent service at times during which route 320 - Jane Express currently 
-    operates due to the high amount of resources (buses) already used on Jane Street during those hours (two 
-    routes each running at least every 17 minutes). After approximately 10:30 p.m., 
-    service levels may sharply drop as 320 stops operating around that time and 20's service drops significantly.
-</p>
-<h2>Preliminary Recommendation</h2>
-<p>
-    I think it is clear that whether or not a Creditstone route is worthwhile during rush hours, Edgeley likely 
-    has more ridership potential than Creditstone. If only one road is to have a midday service, it should be Edgeley. 
-    This could be achieved by running the existing 26 during midday hours, with the newly-proposed route running 
-    during rush hours only. I would prefer this over running the proposed Route 29 - Edgeley due to its lack of 
-    connectivity to Maple GO station, and the rest of its route having a similar problem to the Creditstone routing.
-</p>
-<p>
-    Additionally, rush hour service seems to be much more effective with an improved service on Edgeley. To ensure 
-    resources on that corridor, which has a much greater area of service than the Creditstone corridor, are used 
-    most efficiently, I would strongly recommend a blended schedule: Running every 20 minutes during the AM 
-    rush and every 21 minutes during the PM rush. This allows the existing bus allocations on 
-    Routes 29 - Edgeley and 26 - Maple while ensuring the best service on Edgeley. In the event the service 
-    north of Rutherford on Route 29 requires a much different frequency, alternatives should be considered (perhaps 
-    an additional vehicle on one route to ensure the expected frequency is met).
-</p>
-<p>
-    For further commentary on each individual case tested, see <a href="./test-cases.pdf">the test cases document</a>.
-</p>
-<p>
-    With the Jane BRT included, the impact of running more service on Edgeley becomes even more clear, along with 
-    the necessity of fast, frequent service on the Jane BRT. The Jane BRT will most likely improve outcomes 
-    within the study area, and due to the slower nature of Route 20 north of there it will be even more 
-    beneficial further north. Whether a branch should run to Teston Road (a likely suggestion to avoid a transfer) 
-    is out of this study's scope, but it should be studied.
-</p>
+
 <h2>Could these models be used elsewhere?</h2>
 <p>
     These models are suitable for areas with very similar land use where the vast majority of travellers are going 
@@ -233,9 +231,6 @@
     being disconnected in the east-west direction due to Highway 400 to the west and the CN Rail yard to the east. 
     The aforementioned area near Pharmacy Avenue has a railroad in the east, though it is a much lesser wall than 
     the CN yard is.
-</p>
-<p>
-    
 </p>
 <p>
     <br/><br/><br/>
