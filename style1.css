@@ -144,12 +144,12 @@ img{
     }
     .gallery1{
         float: left;
-        width: 35%;
+        max-width: 400px;
         padding: 0px;
     }
     .gallery2{
         float: left;
-        width: 55%;
+        max-width: 520px;
         padding: 0px;
     }
     .gallery3{
@@ -159,7 +159,7 @@ img{
         margin-right: auto;
         /*The above centres images on mobile*/
         float: none;
-        width: 66%;
+        max-width: 700px;
         padding: 0px;
     }
     /* to be developed further. Goal is to have a menu that only appears on click
@@ -192,17 +192,17 @@ img{
     }
     .gallery1{
         float: left;
-        width: 20%;
+        max-width: 300px;
         padding: 0px;
     }
     .gallery2{
         float: left;
-        width: 30%;
+        max-width: 400px;
         padding: 0px;
     }
     .gallery3{
         float: left;
-        width: 42%;
+        max-width: 490px;
         padding: 0px;
     }
 }
