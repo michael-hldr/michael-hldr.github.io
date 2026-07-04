@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Mathematics 4 Construction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+</style>
+<body>
+<header> 
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+</header>
+<div class="main" style="padding-top: 30px">
+<h1>Competitive Programming Vs. Real Life</h1>
+<p>
+    As I note <a href="/advice/math-contests.html">elsewhere on this site</a>, I spent much of my teenage years 
+    doing programming competitions. As I begin to encounter programming as a co-op student, I think it will be good 
+    to look at the differences between those competitions and what's expected of me now. This page does not consider 
+    LeetCode, sometimes used in technical interviews. As a civil engineer, I have never needed to use it.
+</p>
+<h2>Collaboration Aspects</h2>
+<h3>Competitive Programming</h3>
+<p>
+    Most programming competitions, online or otherwise, are expected to be done individually. Additionally, 
+    competitors normally have a certain amount of time (often 2, 3, or 4 hours) to solve the problems. 
+    Competitors may be ranked on solve times, either as a tiebreaker or by declining numbers of points being 
+    awarded for each problem with more time taken.
+</p>
+<p>
+    All these factors encourage very messy code. One- or two-letter variable names are common. Comments might 
+    as well be non-existent unless occasionally if it's part of a template (usually but not always allowed). Other 
+    people will probably not read the code and you probably won't either. Sometimes you may need to reference 
+    it if explaining the problem to someone else, but for most problems you will not need to do that and others 
+    trying to solve that problem are normally expected to have some understanding of the code anyway.
+</p>
+<p>
+    The lack of comments extends to people who make competition problems. I tested problems for some  
+    <a href="dmoj.ca">DMOJ</a> competitions and have found authors typically make more comments to save debug code than 
+    to guide the reader. Typically any guidance given (even after you are done testing the problems for yourself) 
+    involves some explanation and I have had plenty of it from authors (particularly one who consistently 
+    overestimated me).
+</p>
+<p>
+    For programming competitions, testing code involves doing a bunch of cases in the terminal, often randomly 
+    generated though some from one's head. However, I find testing competitions to be more interesting. 
+    People of almost any skill level are able to test the problems (this is important for ensuring 
+    problems are original and can't be cheesed, allowing a much easier solution to pass) and I find the best 
+    testers are at the level where they may struggle on some of the problems, trying those easier solutions. 
+    It's a process that could not exist in engineering, where problems are much less clearly defined and inputs and 
+    outputs could vary. 
+</p>
+<h3>Real Life</h3>
+<p>
+    The above is in contrast with engineering, where everything (including code) must be quality checked 
+    and possibly even seen by clients (in civil engineering, it will likely not be seen by the public). Your 
+    co-workers do not want to spend too much time reviewing your code and you want to work on something else in 
+    the meantime, so ensuring your code is understandable without your co-worker constantly asking you about it 
+    is very important. Variable names are also more functional.
+</p>
+<p>
+    You are still expected to write your code reasonably fast, but time spent looking over the code matters too. 
+    This is more efficient for company time, not simply for the time you spent writing the code 
+    (what programming competitions measure). As a result, code is always neater when coming out of the workplace.
+</p>
+<h2>Use of Artifical Intelligence</h2>
+<p>
+    Artificial intelligence is normally banned from competitions. 
+    <a href="https://codeforces.com/blog/entry/133941">Codeforces</a> only allows it for syntax and minor coding 
+    suggestions as well as translation, and DMOJ (and most official competitions as far as I can tell)
+    <a href="https://dmoj.ca/post/292-dmoj-ai-policy">prohibit its use outright</a>. Programming competitions 
+    have suffered from high levels of cheating since AI models became more prevalent. Last spring, I followed 
+    the story of high levels of AI-assisted <a href="../math-contest-decline/#cheating">cheating</a> on the 
+    Canadian Computing Competition (CCC), which resulted in the non-publication of that year's results and 
+    a large number of people being disqualified from both the competition and the University of Waterloo's Math 
+    Faculty (which runs the competition).
+</p>
+<p>
+    Much of the tech industry 
+    has gone way in the other direction on AI. Civil engineering occupies a middle ground on this. 
+    The current CEO of HDR (my current co-op employer) has stated the company is 
+    <a href=https://www.mbj.com/featured/the-trust-builder-henderson-brings-combat-lessons-to-hdr-s-helm/article_6da9f7e9-19ac-4fad-ba7a-e35230b7f00e.html>
+    "not an AI company"
+    </a> and that employees should not fear losing their jobs to it. He wants us to learn the tools well as part 
+    of "mastering our craft", but it's only one tool of many we use, including those already proven to work 
+    efficiently for the company and its clients. Additionally, AI has data integrity issues, 
+    which has led some employers to restrict AI use on sensitive data
+    unless done with a tool which verifiably does not train its model on the data. 
+    Given the regularity of AI hallucinations, AI-written work will 
+    probably be put under more scrutiny. This may lead us to question what uses of AI truly save time 
+    (I'm sure these exist, but we must be careful).
+</p>
+<h2>Object-Oriented Programming (OOP)</h2>
+<p>
+    OOP is almost nonexistent in competitive programming. There is the occasional function, but they are more 
+    often just part of someone's template normally used to make input times faster (important when there is a 
+    tight time limit and a million inputs). This could also explain why competitive programmers prefer C++
+    (a faster language with more difficult OOP) over Python (the most common language civil engineers use). 
+    OOP is much more important at work. Functions and classes may be used several times by a 
+    bunch of different scripts. Copy-pasting duplicate code creates a nightmare for debugging especially if 
+    you are using it a bunch of times. You are allowed to have a file system (not true in programming competitions).
+</p>
+<h2>Run time</h2>
+<p>
+    Programming competitions are optimized to have a runtime in the order of magnitude of 0.1 or 1 second. This is 
+    to ensure the code can run quickly rather than hogging a judging computer for too long. Real-world problems 
+    are not like this. Transportation models can run for hours or even days. Initialization alone can take several 
+    minutes (and you may get a runtime error before it has fully initialized). Real-world models still need to run 
+    quickly enough for results to be returned to the client in a timely manner, but instant feedback is unnecessary 
+    so runs can take up to a few weeks running on a supercomputer if needed (though I am doubtful the average 
+    engineering firm has access to such tech).
+</p>
+<h2>Debugging</h2>
+<p>
+    Debugging is just as cumbersome no matter where you are programming, though as mentioned previously it is 
+    easier with cleaner code and probably also easier with assistance from another person or an approved AI model.
+</p>
+<h2>Dissemination of Information</h2>
+<p>
+    Most competitions have some kind of "no-discussion" time, where online discussion of competitions is not 
+    allowed. This is normally due to differing time zones, and the highest levels of competition or competitions
+    hosted at a particular time may only enforce this rule during the competition time. You may get disqualified 
+    for doing this, but most people will get away with it from my experience. This also was a common method of 
+    cheating before: On windowed competitions (can be done any time within a certain period), you can have 
+    a friend (or an alternative account) do it first then do the competition on your main account with an 
+    information advantage over the other competitors. This method seems to have been displaced by AI models nowadays.
+</p>
+<p>
+    The typical engineer has some knowledge of secrets which they are never allowed to leak. Not just until 
+    the end of the project. Doing so may damage your employer's reputation (especially if the employer is a consulting 
+    firm). Normally, when information is leaked it has little to do with the code (pretty mundane compared to 
+    more important project details). Political reasons or people just really passionate about getting their 
+    hands on project updates seem to be most common. If a project is done in association with the government, 
+    citizens may prefer to get information via a 
+    <a href="https://www.ontario.ca/page/freedom-information-request">Freedom of Information (FOI) request</a>. 
+    This has led to the publication of some embarrassing stories for the government without anyone 
+    breaking a Non-Disclosure Agreement. 
+</p>
+<p>
+    <br/><br/>
+    Last updated: 07/04/2026
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
