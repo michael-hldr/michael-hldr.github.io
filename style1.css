@@ -238,4 +238,7 @@ p{
     a:hover, .a:link, a:active, a:visited, .tab p, .tab a, .darkmode a:hover, .darkmode a:link, .darkmode a:active, .darkmode a:visited, .darkmode .tab a, .darkmode .tab p{
         color: #89c6e3;
     }   
+    iframe{
+        height: 275px;
+    }
 }
