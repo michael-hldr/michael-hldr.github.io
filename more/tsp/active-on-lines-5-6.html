@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Active TSP on Lines 5 & 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style1.css">
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<style>
+</style>
+<body>
+<header> 
+<nav class="navbar">
+    <a href="/">
+        <img src="/files/christmas_ice.jpg" width="25" height="14">
+        &nbsp;&nbsp;Home
+    </a>
+    <a href="/projects">Projects</a>
+    <a href="/advice">University Advice</a>
+    <a href="/more">More</a>
+    <a onclick=darkmode() href:"javascript.void(0);">Toggle dark mode</a>
+</nav>
+</header>
+<div class="main" style="padding-top: 30px">
+<h1>Active TSP on Lines 5 & 6 Will be Hard to Implement Well</h1>
+<p>
+    Transit signal priotity (TSP) is not a silver bullet. It will most likely improve travel times on Lines 5 and 6, 
+    but there is a limit to  what it can do and riders may be disappointed if the City does not understand them.
+    When you think of TSP, 
+    you probably think of active signals which will detect a vehicle and let it through. 
+    This page will focus on these active TSP systems, rather than passive systems, with a focus on their 
+    potential implementation on Lines 5 & 6 in Toronto. 
+    The ION LRT in Kitchener-Waterloo, which has some similar design elements and is not far from Toronto, is a good 
+    system to look at when looking at what challenges active TSP systems might face.
+</p>
+<a name="ion"></a>
+<h2>The ION LRT</h2>
+<p>
+    The ION LRT is not perfect. Like Toronto's LRTs, it too suffers from signal delays and that has 
+    led the local advocacy group to call for better TSP. However, the line is faster than Toronto's system and 
+    we can learn from them. The ION's infrastructure is a good place to start. 
+    Even whenre it runs in the middle of the street, the streets it 
+    runs on are normally narrower than a Toronto arterial, normally two car lanes rather than four. The north end of 
+    the line is an exception, though it does not have any stations in that segment. These segments, despite being on-street 
+    just like Toronto's LRTs, feel faster than the street-running segments in Toronto.
+</p>
+<p>
+    The frequency is another aspect which will be important later. Lines 5 and 6 respectively run 
+    around every 4 and 6.5 minutes during peak hours, and every ~7 and ~10 minutes during the vast majority of off-peak hours.
+    By contrast, the ION LRT runs every 10 minutes during the day on weekdays and every 15 minutes during most 
+    other times. This may be a downgrade for wait time, but it also makes TSP more reliable (as I'll discuss later on). 
+    These factors are both important when discussing the advantages the ION has when compared to Toronto's LRTs.
+</p>
+<a href="stay-red"></a>
+<h2>Why Lights Have to Stay Red</h2>
+<p>
+    In this analysis, I am assuming car traffic flow is not considered at all. This is not how it is normally done, but 
+    it is important to establish an upper limit to TSP's effectiveness under current infrastructure.
+    Times are taken from 
+    <a href="https://www.toronto.ca/wp-content/uploads/2017/11/91d6-0_2015-11-13_Traffic-Signal-Operations-Policies-and-Strategies_Final-a.pdf">
+    City policy</a>
+    or from equations I used in CIV332. I've been told the polcy is out of date and they may have become more conservative 
+    with signal timing (i.e. more time would be required) since this policy was published but I do not currently have 
+    evidence to suggest that is the case and my numbers have been accurate to what I have seen while riding Lines 5 & 6.
+</p>
+<h3>Amber and Red Signals</h3>
+<p>
+    We can start by assuming left-turn phases do not exist. Not counting them, the last thing the intersection needs to 
+    do before letting the LRV go is stop traffic on the cross street. The City of Toronto mandates at least 5 seconds for this, 
+    though we also need to make sure drivers won't be forced to run a red light. We use the equation below to ensure 
+    we do not cause a dilemma zone, where a driver would be forced to run a red light due to being unable to brake on time. 
+    It additionally prevents drivers travelling at a reasonable speed from being unable to clear the intersection before 
+    the LRV gets a green light.
+    \[t = \delta + \frac{u_0}{2a} + \frac{W + L}{u_0}\]
+</p>
+<p>
+    In this equation:
+</p>
+<p>
+    \(\delta\) is the reaction time (\(s\)), typically assumed to be 1 second.<br/>
+    \(u_0\) is the driver's speed (\(m/s\)), often assumed to be the speed limit.<br/>
+    \(a\) is the vehicle's acceleration as it slows to a stop (\(m/s^2\)). For cars, this is often assumed to be \(0.27g\), where \(g\) is the Earth's gravitational acceleration (\(9.81 m/s^2\)).<br/>
+    \(W + L\) is the width of the intersection and length of the vehicle, respectively (\(m\)). A car is typically assumed to be 6 metres long.
+</p>
+<p>
+    The first two terms of this equation ensure a driver is not forced to run a red light (minimum amber signal time). The 
+    third term ensures a driver continuing through the intersection has enough time to cross. Combined, these terms are 
+    the minimum allowed time for the amber ("yellow light") and all-red phases. When you use the speed limit term, divide the 
+    posted speed limit in km/h by 3.6, as 1 m/s = 3.6 km/h. The time is typically rounded up to the nearest second. With all 
+    our information and a roughly 40-metre intersection (this may vary slightly between intersections along Finch West), 
+    we find the amber and red signals need to be <strong>7 seconds</strong> long on the cross street. If the intersection is 
+    greater than around 41.5 metres (I believe this would be measured from the front of the stop line to the end of the 
+    other side's crosswalk), it will need to be 8 seconds.
+</p>
+<a href="peds"></a>
+<h3>Pedestrians</h3>
+<p>
+    Before the amber signal is the pedestrian coundown, referred to by traffic engineers as the Flashing Don't Walk (FDW). City policy 
+    requires this countdown to be as long as pedestrians walking at a 1.2 m/s speed to cross. There are additional rules, 
+    but they are not relevant to most intersections (and not the ones I looked at). Some places (e.g. Detroit) start the 
+    amber signal 3-4 seconds before the pedestrian countdown reaches 0, but I have never seen any jurisdiction 
+    in Ontario do this so I am assuming it would not be able to be implemented. Additionally, the walk phase must be at least 
+    <strong>7 seconds</strong> long.
+</p>
+<p>
+    Dividing a 33-metre crosswalk length (measured via Google Earth at Islington) by the 1.2 m/s speed reveals the
+    pedestrian countdown should be at least <strong>28 seconds</strong>. While riding Line 6, intersections at which I was stopped 
+    early during a red phase (for the LRV) had pedestrian countdowns ranging from 27 to 32 seconds for most, and 
+    35 seconds at Signet Arrow station, which is at intersection with a right-turn lane. 
+</p>
+<p>
+    Inevitably, this leads us into a conversation about whether this is necessary. Because the LRT stations (excluding 
+    the termini) are at the centre of the road, any trip involving a surface station (which would be a majority of trips 
+    on Line 6) would require riders to cross the road before boarding or after alighting from an LRV. If pedestrian 
+    crossings were ignored entirely when an LRV approached, anyone boarding at that station would need to wait extra time 
+    to board their train. If the line is frequent enough such that trains regularly come to a station during multiple 
+    successive signal cycles (e.g. Line 5 during rush hour, possibly Line 6 during rush hours), pedestrians may need to 
+    wait a few minutes to access the station (unless they jaywalk). As I discuss further down, stations are 
+    the slowest intersections as LRVs need to stop immediately after the intersection. Additionally, around two-thirds of 
+    surface intersections on both lines have stations.
+</p>
+<p>
+    A two-stage crossing is an alternative which would allow pedestrians to continue accessing the station. However, 
+    at most stations on Line 6 this would only save 8-10 seconds as there is only one place for pedestrians to wait 
+    between cycles: The island with the station platform. At a far-side station, a pedestrian would have to 
+    cross three traffic lanes, a bike lane, and both LRT tracks in one phase but just two traffic lanes and a bike lane 
+    during the following phase. As a result, the time saved is closer to a third rather than half the time. 
+    <strong>This is still beneficial for reducing signal waits</strong>, but not as beneficial as one would hope. Additionally, 
+    it would force pedestrians crossing the road to wait an additional cycle to cross (crossing would probably take ~3 minutes). 
+    This may be a major problem if the intersection has high pedestrian volumes.
+</p>
+<p>
+    Some intersections along both Finch and Eglinton were not built with pedestrian refuge islands, preventing two-stage 
+    crossings from being implemented in those places. This infrastructure may be able to be built, but likely at the cost 
+    of more infrastructure construction.
+</p>
+<a name="ion-advantage"></a>
+<h4>The ION Advantage</h4>
+<p>
+    This is where the narrower street the ION LRT normally runs on starts benefiting the line: While it also does not have refuge 
+    islands in much of its street-running sections (apart from where stations are placed), pedestrians have fewer lanes to 
+    cross. This allows for the crossing to be (in most cases) a bit shorter than a typical two-stage crossing along Line 6. 
+    Additionally, some sections of the line run on parallel streets reducing road width (and therefore pedestrian countdown 
+    lengths) further.
+</p>
+<p>
+    The ION additionally uses crossing gates on sections running off-street or on the side of the street. These would 
+    be possible to implement (with several seconds' notice) if pedestrians had places to wait on both sides of the 
+    tracks. Unfortunately, there are very few places on either Line 5 or 6 where this is possible (Eglinton Square near 
+    O'Connor station might be the only intersection where this is fully possible). Any additional infrastructure would 
+    require much construction including the widening of Eglinton Avenue at most intersections along the surface section. 
+    You may think this is worth the money, but it would be politically difficult.
+</p>
+<a href="lrv-amber"></a>
+<h3>Amber and All-Red Phases For the LRVs</h3>
+<p>
+    Before the traffic signal turns red, the length of the amber and red phases must allow not only cars but also 
+    LRVs to cross the intersection. The equation below will apply again with some changes.
+    \[t = \delta + \frac{u_0}{2a} + \frac{W + L}{u_0}\]
+    The \(\frac{W + L}{u_0}\) term assumes the vehicle is going through the intersection at a constant speed. However, this 
+    is not the case at most intersections as two-thirds have a stop immediately adjacent to them. At a station I measured, this is around 
+    9 metres. This varies between intersections (I remember another along Line 5 is 4 metres), but they are all very close 
+    to the intersection. We will need to use the kinematic equation from high-school physics to replace that term.
+</p>
+<p>
+    \[x = at^2 + ut + d\]
+    We can assume the \(u\) and \(d\) terms are 0 as the LRV is stopped at the stop. This simplifies the equation to:
+    \[x = at^2\].
+    The acceleration of the LRV is not the same as for a car. A spec sheet I found for a similar model from Alstom had 
+    a $1.2 m/s^2$ "deceleration" (acceleration to a stop), but I have heard the TTC prefers to do this at $0.9 m/2^2$ and 
+    the intersections I saw seemed to fit this number. This could be changed if the TTC would like, but passengers may 
+    need to get used to quicker acceleration (and hold on more). This assumes the line's overhead power could handle a greater 
+    acceleration (I don't know whether this is true). If it does not, replacing it would be costly.
+</p>
+<p>
+    We solve the equation at 2 displacement (\(x\)) values: 9 metres and 9 metres plus \(L+W\). This gives us the beginning 
+    and end of when the LRV occupies some portion of the intersection. We find the difference between these two numbers is 
+    8 seconds for the higher deceleration value, and 12 seconds for the lower deceleration value at a typical intersection 
+    (when I was doing calculations initially, I used 43 metres as the length. It may be wider or narrower).
+</p>
+<p>
+    Adding the rest of the terms, we find that with the higher deceleration value, 16 seconds of combined amber and 
+    all-red time is still needed. With the lower value, it is <strong>20 seconds</strong>. Intersections I have observed 
+    in practice have ranged from 17 to 22 seconds, though the lower values were at more minor intersections. On average, 
+    it was slightly lower than my calculations suggested (maybe a second).
+</p>
+<a href="active-total"></a>
+<h3>The Total</h3>
+<p>
+    Adding these numbers up, the signal needs <strong>59 to 64</strong> (probably 63-64) <strong>seconds</strong> 
+    of non-green time for the LRV in any cycle. It may be 8-10 seconds less if a two-stage crossing is possible. 
+    This means that to ensure a green light, the signal will need to have over a minute of notice in order to 
+    guarantee a green light for the LRV. If there's another train which activates an extended green or phase rotation 
+    (left-turn signal after the LRV's all-red), more time (at least 11, possibly 30 seconds) will need to be added. 
+    This would happen more often if the line runs very frequently, as if the line runs more often than every 8 minutes, 
+    LRVs will come on average during more than half of the two-minute signal cycle, during most of which they will 
+    need to activate the TSP.
+</p>
+<a href="more-complications"></a>
+<h2>More Complications</h2>
+<p>
+    Due to the above complications, intersections are not considered predictable by traffic engineers. Unfortunately, 
+    the majority of intersections on Lines 5 and 6 are too close to each other (some much too close) to guarantee a green 
+    signal in this case. Thus, it will be very difficult to ensure LRVs get a green light with current infrastructure. 
+    This is in addition to current systems' inability to account for more than one LRV at once (the TTC's usual system 
+    is first-come, first-served: Either first vehicle to request TSP from the signal or first to reach the intersection).
+</p>
+<a href="active-signal-coordination"></a>
+<h3>Signal Coordination</h3>
+<p>
+    This is the part where traffic flow starts to matter. Traffic signals are timed to allow drivers travelling in the peak 
+    travel direction to get a "green wave", going through successive intersections without hitting a red light if they are 
+    travelling at the speed limit. This can be used for cyclists or slower traffic speeds where that is applicable. I can 
+    sometimes get a green wave while running because of this. However, extended greens (which are often needed) can 
+    disrupt this cycle. To account for this, the cycle after a green extension is reserved to return the signal timing to 
+    its coordinated state. Because of this, you can not guarantee a TSP system with an extended green will activate 
+    more than once in a four-minute span without eliminating the signal coordination.
+</p>
+<p>
+    At that point, it may be better to instead coordinate the signals for transit vehicles, which would be more reliable 
+    if the system's non-intersection times can be predictable. This is called <strong>Passive TSP</strong>.
+</p>
+<a name="passive"></a>
+<h2>Passive TSP</h2>
+<p>
+    This section is a work in progress and I am actively seeking review to ensure I am covering this topic as 
+    best as I can.
+</p>
+<p>
+    Passive transit signal priority is coordinating traffic signals to favour transit vehicles rather than other 
+    modes. Signals would be timed for expected transit vehicle travel times including stopping, 
+    rather than those of other modes. For something like this, 
+    you would still need stops to be mostly reliable to allow the LRVs to run on a set schedule. 
+    However, since the signal timing is built into the TSP implementation you do not need to worry 
+    about getting the signal back to coordination. The TSP would thus be able to work with highly frequent services. 
+    However, it still has a limit.
+</p>
+<a name="passive-limit"></a>
+<h3>The Limit</h3>
+<p>
+    To ensure the signals work the same for all successive trains, 
+    the signal cycle length will need to be a factor of the headways on the line. 
+    This is harder but not impossible for highly frequent lines.
+</p>
+<p>
+    Signal cycles in Toronto tend to be around 2 minutes, 
+    and Toronto’s pedestrian guidelines will likely mandate a cycle length nearing that value. 
+    If we assume a cross street is similarly wide but does not have an LRT line, 
+    it will require around 12 fewer seconds for its part of the cycle. I use this value to ensure consistency: 
+    The signal coordination must factor in the widest street it crosses with the longest necessary pedestrian countdowns.
+</p>
+<p>
+    As mentioned further up, LRVs need to have a red light for 63 seconds without a two-stage crossing, 
+    but that includes the cross street’s 7-second amber and all-red. 
+    However, there are some roads with right-turn lanes that take longer like Signet Arrow on line 6 
+    (which has a 35-second pedestrian countdown).
+</p>
+<p>
+    Factoring that intersection in, 
+    we find the cross street needs 49 seconds and the LRV’s street needs around 55 seconds. 
+    You will also need to include left turns which take another 11 seconds each. That totals 2 minutes and 6 seconds. 
+    If two-stage crossings are implemented, this is reduced to around 1 minute and 55 seconds. 
+    Two times this value is 3 minutes and 50 seconds, which is already right around how often line 5 runs right now. 
+</p>
+<p>
+    Line 5’s rush hour frequency already approaches this number, 
+    as it is currently running at 3:47 headways in the morning and 3:56 headways in the afternoon. 
+    Lines 5 and 6 should not run any more frequently than this, 
+    unless they specifically decide to run it every two minutes though this might cause more problems 
+    as I will discuss later. If Line 5 needs a major increase in capacity, 
+    it will probably be more effective to add a third car to the existing tram couples, 
+    as improved frequency will be harder to coordinate with.
+</p>
+<p>
+    Having six and a half minute headways makes it a bit easier for Line 6. 
+    At a 7-minute headway, you can choose a 1:40 cycle or a 2:20 cycle and both would be reasonable. 
+    With headways a bit less than that, a slightly over two-minute cycle would work and be similar to the existing signals.
+</p>
+<p>
+    You might ask if the system would have major problems in the event of a delay. 
+    If a train holds too long at a station and gets a red, 
+    it should only at most be delayed by the length of a signal cycle. 
+    Since the system would be designed for a green wave, 
+    the vehicle would continue as normal after it hits its first red.
+</p>
+<a name="passive-signal-timing"></a>
+<h3>Signal Timing</h3>
+<p>
+    Signal timing gets complicated in three separate ways. Firstly, any change in service frequency over time, 
+    such as after the end of rush hour, would complicate timing. 
+    This can be mitigated by using a headway that is also a multiple of the pre-existing cycle length, 
+    but it may limit your options for determining an appropriate headway.
+</p>
+<p>
+    Service changes (particularly changing the line’s headways) 
+    would require a new signal timing plan as the cycle length would need to change to accommodate the new headways. 
+    This may make service changes require more time and money to implement than they would otherwise.
+    Adding a third tram to the existing coupled LRVs will also cause a change in signal timing 
+    as it would need more time to cross the intersection, 
+    but this change could be done while keeping the existing cycle length, 
+    especially if the green time used for the LRVs is not the bare minimum.
+</p>
+<p>
+    Additionally, you might not even be able to have the time you need to change the signal timing. 
+    Any sufficiently long slow zone would need to be accompanied by changes in signal timing. 
+    These may be difficult to plan for as slow zones are normally implemented for safety reasons 
+    rather than being planned for ahead of time. 
+    Signal timing changes may thus need to happen faster than the City is accustomed to.
+</p>
+<a href="passive-other-direction"></a>
+<h3>What About the Other Direction?</h3>
+<p>
+    Within above parts of the Passive TSP section of this page, I have not accounted for the fact that LRVs 
+    come in both directions. Coordinating traffic signals for traffic in both directions is very difficult, 
+    so difficult in fact that traffic engineers only coordinate for regular traffic in a peak direction. 
+    This is fine for lines where there is a clear peak direction. 
+    However, the counter-peak direction will not enjoy any TSP and intsead it’ll be left to random chance.
+    This could be mitigated by implementing active TSP only in the opposite direction, 
+    though if your line is too frequent it’ll be very difficult to do and it will be impossible if your cycle 
+    length is near the bare minimum.
+</p>
+<a name="takeaway"></a>
+<h2>The Takeaway</h2>
+<p>
+    <strong>Transit Signal Priority is not a silver bullet</strong>. Especially on wide roads, pedestrians' needs much 
+    be taken into account whether through infrastructure or signalling which does not give the LRVs a green when the 
+    pedestrians have not finished crossing their tracks.
+</p>
+<p>
+    Passive TSP has a lot of promise. When implemented well, it can prove reliable in areas where active TSP has trouble. 
+    However, it comes with a lot of difficulties which may doom it especially if your transit line 
+    does not have a clear peak direction. 
+    This kind of surface transit will always be subjected to surface traffic no matter where it is.
+    If all this sounds complicated and you just want a reliable way to give transit the green light, 
+    perhaps the line needs to be grade-separated or crossing gates and necessary associated infrastructure.
+</p>
+<a name="Acknowledgements"></a>
+<h2>Acknowledgements</h2>
+<p>
+    My interest in TSP would not have been possible without the 2025 UTTAN Student Competition, 
+    my peers who worked on it (Lucas Gaspari and Thanusan Ragulan) alongside me, and our mentors 
+    (Joshua Wang of York Region and Tony Zhuang of Burlington Transit). 
+    I would also like to thank a coworker with whom I've had multiple conversations on this subject. He inspired me to
+    look into TSP more deeply than I had last year, without that this page would not have been possible. I still have more 
+    to learn, of course, and hope to continue building my understanding of TSP.
+</p>
+<p>
+    <br/><br/>
+    Last updated: 08/20/2026
+</p>
+</div>
+
+<script>
+    function darkmode(){
+        document.body.classList.toggle("darkmode");
+    }
+</script>
+</body>
+</html>
